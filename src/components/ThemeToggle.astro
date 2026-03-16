@@ -1,0 +1,67 @@
+---
+const id = "theme-toggle";
+---
+
+<div class="theme-toggle" aria-label="Apparence">
+  <span class="theme-toggle__label">Mode</span>
+
+  <div class="theme-toggle__controls" role="group" aria-labelledby={id}>
+    <span id={id} class="sr-only">Choisir l’apparence</span>
+
+    <button type="button" class="theme-toggle__btn" data-theme-value="auto">
+      Auto
+    </button>
+    <button type="button" class="theme-toggle__btn" data-theme-value="light">
+      Clair
+    </button>
+    <button type="button" class="theme-toggle__btn" data-theme-value="dark">
+      Sombre
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+
+    const getSavedTheme = () => {
+      try {
+        return localStorage.getItem("theme") || "auto";
+      } catch {
+        return "auto";
+      }
+    };
+
+    const applyActiveState = () => {
+      const current = getSavedTheme();
+      document.querySelectorAll(".theme-toggle__btn").forEach((btn) => {
+        const value = btn.getAttribute("data-theme-value");
+        const active = value === current;
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    };
+
+    const setTheme = (value) => {
+      try {
+        localStorage.setItem("theme", value);
+      } catch {}
+      root.setAttribute("data-theme", value);
+      applyActiveState();
+    };
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      const btn = target.closest(".theme-toggle__btn");
+      if (!btn) return;
+
+      const value = btn.getAttribute("data-theme-value");
+      if (!value) return;
+
+      setTheme(value);
+    });
+
+    applyActiveState();
+  })();
+</script>

@@ -1,0 +1,92 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+import "../styles/global.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+};
+
+const {
+  title,
+  description,
+  image = site.socialImage,
+  canonical,
+  type = "website",
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(site.url);
+const pathname = Astro.url?.pathname ?? "/";
+const canonicalUrl = canonical
+  ? new URL(canonical, siteUrl).toString()
+  : new URL(pathname, siteUrl).toString();
+
+const pageTitle = title ? `${title} · ${site.name}` : site.title;
+const pageDescription = description ?? site.description;
+const ogImage = image.startsWith("http")
+  ? image
+  : new URL(image, siteUrl).toString();
+---
+
+<!DOCTYPE html>
+<html lang={site.lang}>
+  <head>
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme") || "auto";
+          document.documentElement.setAttribute("data-theme", saved);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "auto");
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body class="min-h-screen bg-bg text-fg">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-bg focus:px-3 focus:py-2 focus:text-sm focus:text-fg focus:shadow-md"
+    >
+      Aller au contenu
+    </a>
+
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main id="main" class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

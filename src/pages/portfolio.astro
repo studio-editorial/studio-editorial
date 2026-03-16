@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import { getCollection } from "astro:content";
+
+const getArticleDate = (entry: any) => entry.data.pubDate ?? entry.data.date;
+
+const articles = (await getCollection("articles"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => +new Date(getArticleDate(b)) - +new Date(getArticleDate(a)));
+
+const byId = new Map(articles.map((entry) => [entry.id, entry]));
+
+const proofs = [
+  {
+    title: "Lire le SEO avec des métriques business",
+    description:
+      "Prouve une capacité à relier intention de recherche, CAC, LTV et rentabilité éditoriale. C’est la pièce la plus directement utile pour un SaaS B2B.",
+    label: "Vision business",
+    id: "seo-saas-intention-recherche-rentabilite",
+  },
+  {
+    title: "Construire une autorité thématique au lieu d’empiler des articles",
+    description:
+      "Prouve une lecture systémique du contenu : architecture, profondeur, cohérence, maillage et discipline éditoriale.",
+    label: "Vision système",
+    id: "autorite-thematique",
+  },
+  {
+    title: "Rendre une logique de funnel lisible sans jargon creux",
+    description:
+      "Prouve une capacité à transformer un concept marketing banal en cadre utile à la décision.",
+    label: "Clarté stratégique",
+    id: "tofu-mofu-bofu",
+  },
+  {
+    title: "Vulgariser un sujet technique sans l’aplatir",
+    description:
+      "Prouve une capacité à écrire pour des marchés techniques sans perdre la substance ni tomber dans le jargon.",
+    label: "Vulgarisation technique",
+    id: "vulgarisation-dette-technique",
+  },
+  {
+    title: "Produire en marque blanche dans un cadre lisible",
+    description:
+      "Prouve une capacité à formuler une offre nette, opératoire, directement achetable par une agence.",
+    label: "Renfort agence",
+    id: "demo-operationnelle",
+  },
+]
+  .map((item) => ({
+    ...item,
+    entry: byId.get(item.id) ?? null,
+  }))
+  .filter((item) => item.entry);
+
+const formatDate = (value: Date | string | undefined) => {
+  if (!value) return "";
+  return new Intl.DateTimeFormat("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(value));
+};
+
+const getReadingTime = (entry: any) => {
+  if (entry.data.readingTime) return entry.data.readingTime;
+
+  const raw = typeof entry.body === "string" ? entry.body : "";
+  const words = raw
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]*`/g, " ")
+    .replace(/[#>*_[\]\(\)\-]/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  const minutes = Math.max(1, Math.round(words / 220));
+  return `${minutes} min`;
+};
+---
+
+<BaseLayout
+  title="Portfolio éditorial — Preuves, analyses et démonstrations"
+  description="Dossier de preuve de Studio Editorial : contenus sélectionnés pour démontrer vision business, clarté stratégique, vulgarisation technique et capacité de production."
+>
+  <section class="py-20 sm:py-24">
+    <Container>
+      <div class="max-w-4xl">
+        <p class="kicker">Portfolio</p>
+        <h1 class="mt-3 h1 text-balance">
+          Quelques pièces choisies pour montrer ce que Studio Editorial sait réellement faire.
+        </h1>
+        <p class="mt-5 lead max-w-3xl">
+          Cette page n’est pas une archive. C’est un dossier de preuve. Chaque pièce est
+          sélectionnée parce qu’elle répond à une objection commerciale précise :
+          compréhension du business, clarté stratégique, lisibilité d’un sujet technique,
+          ou capacité de production.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <p class="kicker">Ce que cela doit prouver</p>
+          <h2 class="mt-2 h3">Le studio ne sait pas seulement écrire</h2>
+          <p class="mt-3 body">
+            Il sait cadrer, hiérarchiser, clarifier, argumenter et relier un contenu à un
+            enjeu d’acquisition ou de conversion.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Ce que cette page n’est pas</p>
+          <h2 class="mt-2 h3">Pas une galerie, pas un blog bis</h2>
+          <p class="mt-3 body">
+            Le portfolio ne rejoue pas l’archive. Il trie les contenus par utilité
+            commerciale.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">À lire ensuite</p>
+          <h2 class="mt-2 h3">Services et contact</h2>
+          <p class="mt-3 body">
+            Une fois la preuve faite, la question devient simple : quel type de mission
+            faut-il ouvrir ?
+          </p>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="max-w-2xl">
+        <p class="kicker">Preuves</p>
+        <h2 class="mt-3 h2">Cinq lectures, cinq angles de crédibilité</h2>
+        <p class="mt-4 body">
+          Le portfolio doit aider un prospect à se situer vite : business, système,
+          conversion, technique, production.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-2">
+        {proofs.map(({ title, description, label, entry }) => (
+          <article class="card">
+            <p class="kicker">{label}</p>
+
+            <h3 class="mt-3 h3 text-balance">
+              <a href={`/articles/${entry.id}/`}>{title}</a>
+            </h3>
+
+            <div class="mt-4 flex flex-wrap gap-3 small">
+              <span>{entry.data.category}</span>
+              <span>·</span>
+              <span>{formatDate(getArticleDate(entry))}</span>
+              <span>·</span>
+              <span>{getReadingTime(entry)}</span>
+            </div>
+
+            <p class="mt-4 body">{description}</p>
+
+            <p class="mt-4 body">
+              <strong>Pièce :</strong> {entry.data.title}
+            </p>
+
+            <div class="mt-6">
+              <a class="btn-secondary" href={`/articles/${entry.id}/`}>
+                Lire la pièce
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <p class="kicker">Objection</p>
+          <h3 class="mt-2 h3">“Vous savez écrire, mais comprenez-vous le business ?”</h3>
+          <p class="mt-3 body">
+            Oui, si le contenu sait parler CAC, conversion, maturité de lecture et coût de décision.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Objection</p>
+          <h3 class="mt-2 h3">“Pouvez-vous traiter un sujet technique sans le simplifier à mort ?”</h3>
+          <p class="mt-3 body">
+            Oui, si la vulgarisation garde la structure du sujet au lieu de la remplacer par du flou.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Objection</p>
+          <h3 class="mt-2 h3">“Serez-vous fiable dans un cadre de production ?”</h3>
+          <p class="mt-3 body">
+            Oui, si l’offre est claire, bornée, révisable et livrée dans un format exploitable.
+          </p>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+<section class="section-rule py-20 sm:py-24">
+  <Container>
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="h2 text-balance">
+          La preuve est suffisante ?<br />Il reste à ouvrir la bonne mission.
+        </h2>
+        <p class="mt-4 body">
+         L’objectif est simple : permettre une lecture rapide du niveau, des angles
+        et du type de crédibilité apporté par chaque pièce.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a class="btn-primary" href="/services">Voir les services</a>
+        <a class="btn-secondary" href="/contact">Parler d’un projet</a>
+      </div>
+    </div>
+  </Container>
+</section>
+</BaseLayout>

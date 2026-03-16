@@ -1,17 +1,239 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Studio Editorial — Contenu stratégique pour SaaS et entreprises tech"
+  description="Studio Editorial conçoit des contenus stratégiques pour SaaS et entreprises tech : articles d’autorité, pages stratégiques et renfort éditorial en marque blanche."
+>
+  <section class="py-20 sm:py-24">
+    <Container>
+      <div class="max-w-4xl">
+        <p class="kicker">Studio Editorial · SaaS · entreprises tech</p>
+
+        <h1 class="mt-3 h1 text-balance">
+          Du contenu utile au business. Pas du volume qui se donne des airs de stratégie.
+        </h1>
+
+        <p class="mt-5 lead max-w-3xl">
+          Studio Editorial conçoit des articles d’autorité, des pages stratégiques et des
+          contenus décisionnels pour SaaS et entreprises tech. L’objectif n’est pas de
+          publier plus. L’objectif est de produire des contenus qui clarifient, qualifient
+          et soutiennent une décision.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn-primary" href="/contact">Parler d’un projet</a>
+          <a class="btn-secondary" href="/portfolio">Voir les preuves</a>
+        </div>
+
+        <div class="mt-12 grid gap-6 border-t border-border pt-10 sm:grid-cols-3">
+          <div>
+            <p class="h4">Pour SaaS B2B et marchés techniques</p>
+            <p class="mt-2 body">
+              Quand le sujet est dense, le cycle de vente long, et la clarté plus utile que l’esbroufe.
+            </p>
+          </div>
+
+          <div>
+            <p class="h4">Pensé pour acquisition et conversion</p>
+            <p class="mt-2 body">
+              Intention, preuve, objection, coût de décision : le contenu est traité comme un levier, pas comme un stock.
+            </p>
+          </div>
+
+          <div>
+            <p class="h4">Production sobre et fiable</p>
+            <p class="mt-2 body">
+              Cadrage net, rédaction dense, livrables propres, communication écrite privilégiée.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="max-w-2xl">
+        <p class="kicker">Preuves</p>
+        <h2 class="mt-3 h2">Trois pièces pour comprendre la ligne du studio</h2>
+        <p class="mt-4 body">
+          Pas besoin de lire tout le site. Trois lectures suffisent pour situer le niveau,
+          l’angle et le type de travail.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <p class="kicker">Vision business</p>
+          <h3 class="mt-2 h3">SEO SaaS et rentabilité</h3>
+          <p class="mt-3 body">
+            Pour voir comment le studio relie contenu, CAC, intention et acquisition.
+          </p>
+          <div class="mt-6">
+            <a class="btn-secondary" href="/articles/seo-saas-intention-recherche-rentabilite/">
+              Lire
+            </a>
+          </div>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Vision système</p>
+          <h3 class="mt-2 h3">Autorité thématique</h3>
+          <p class="mt-3 body">
+            Pour voir comment un site gagne en poids éditorial sans s’éparpiller.
+          </p>
+          <div class="mt-6">
+            <a class="btn-secondary" href="/articles/autorite-thematique/">
+              Lire
+            </a>
+          </div>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Preuve opératoire</p>
+          <h3 class="mt-2 h3">Production en marque blanche</h3>
+          <p class="mt-3 body">
+            Pour voir comment une offre éditoriale peut être formulée de manière achetable.
+          </p>
+          <div class="mt-6">
+            <a class="btn-secondary" href="/articles/demo-operationnelle/">
+              Lire
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-8">
+        <a class="btn-secondary" href="/portfolio">Voir le dossier de preuve</a>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="max-w-2xl">
+        <p class="kicker">Services</p>
+        <h2 class="mt-3 h2">Ce que Studio Editorial peut prendre en charge</h2>
+        <p class="mt-4 body">
+          Trois chantiers. Pas davantage. C’est volontaire.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+        <article class="card">
+          <p class="kicker">01</p>
+          <h3 class="mt-2 h3">Article d’autorité</h3>
+          <p class="mt-3 body">
+            Pour installer une lecture de marché, clarifier un sujet, renforcer une position.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="kicker">02</p>
+          <h3 class="mt-2 h3">Page stratégique</h3>
+          <p class="mt-3 body">
+            Pour relier intention de recherche, argumentation, preuve et conversion.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="kicker">03</p>
+          <h3 class="mt-2 h3">Renfort marque blanche</h3>
+          <p class="mt-3 body">
+            Pour les agences et équipes qui ont déjà le cadre, mais pas le temps de produire proprement.
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-8">
+        <a class="btn-secondary" href="/services">Voir les services</a>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <p class="kicker">Pour qui</p>
+          <h3 class="mt-2 h3">SaaS B2B</h3>
+          <p class="mt-3 body">
+            Quand il faut produire moins, mais mieux relié au pipeline, à la maturité de lecture et à la décision.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Pour qui</p>
+          <h3 class="mt-2 h3">Entreprises tech</h3>
+          <p class="mt-3 body">
+            Quand il faut rendre lisible un sujet dense sans le vider de sa substance.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Pour qui</p>
+          <h3 class="mt-2 h3">Agences spécialisées</h3>
+          <p class="mt-3 body">
+            Quand il faut un renfort discret, cadré, stable, sans rebriefer toute la machine.
+          </p>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Méthode</p>
+          <h2 class="mt-3 h2">Une production simple à suivre</h2>
+          <p class="mt-4 body">
+            Cadrage, structure, rédaction, livraison. Peu d’étapes. Peu de bruit.
+            La méthode n’a pas vocation à impressionner. Elle a vocation à éviter les angles
+            mous, les briefs flous et les contenus inutiles.
+          </p>
+
+          <div class="mt-8">
+            <a class="btn-secondary" href="/methode">Voir la méthode</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">Repère</p>
+          <p class="mt-3 body">
+            Le site doit désormais guider vers trois portes :
+          </p>
+
+          <ul class="mt-5 list-disc space-y-2 pl-5 body">
+            <li><strong>Articles</strong> pour lire la ligne éditoriale</li>
+            <li><strong>Portfolio</strong> pour évaluer la preuve</li>
+            <li><strong>Services</strong> pour ouvrir une mission</li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="h2 text-balance">
+            Un sujet dense, une page à enjeu, une mission de production ?
+          </h2>
+          <p class="mt-4 body">
+            On parle du besoin réel, pas d’un “pack contenu”.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-primary" href="/contact">Parler d’un projet</a>
+          <a class="btn-secondary" href="/portfolio">Voir les preuves</a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

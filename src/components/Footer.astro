@@ -1,0 +1,65 @@
+---
+import Container from "./Container.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import { footerNav, legalNav } from "../data/nav";
+import { site } from "../data/site";
+---
+
+<footer class="border-t border-border bg-surface">
+  <Container>
+    <div class="grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+      <div class="max-w-md">
+        <p class="text-base font-semibold tracking-tight text-fg">
+          {site.domain}
+        </p>
+        <p class="mt-3 body">
+          Studio Editorial conçoit des contenus stratégiques pour SaaS et entreprises
+          tech : articles d’autorité, pages stratégiques et renfort éditorial en
+          marque blanche.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="btn-primary" href="/contact">Parler d’un projet</a>
+          <a class="btn-secondary" href="/portfolio">Voir les preuves</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="h4">Explorer</p>
+        <ul class="mt-3 space-y-2 body">
+          {footerNav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="h4">Cadre</p>
+        <ul class="mt-3 space-y-2 body">
+          <li><a href="/articles">Base éditoriale</a></li>
+          <li><a href="/portfolio">Dossier de preuve</a></li>
+          <li><a href="/services">Offres et missions</a></li>
+          {legalNav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-6">
+          <ThemeToggle />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 border-t border-border py-5 sm:flex-row sm:items-center sm:justify-between">
+      <p class="small">© 2026 {site.name}. Tous droits réservés.</p>
+      <p class="small">
+        Site édité en France · Contact :
+        <a href={`mailto:${site.email}`}> {site.email}</a>
+      </p>
+    </div>
+  </Container>
+</footer>

@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+/* =========================================================
+   1) DESIGN TOKENS
+   ========================================================= */
+
+@theme {
+  --color-accent: #1f2a26;
+
+  --color-paper: #efede9;
+  --color-ink: #181818;
+  --color-muted: #6b6b6b;
+
+  --color-night: #151816;
+  --color-milk: #e4e7e3;
+  --color-dim: #a8ada7;
+
+  --color-bg: var(--color-paper);
+  --color-fg: var(--color-ink);
+  --color-subtle: var(--color-muted);
+  --color-link: var(--color-accent);
+
+  --color-surface: #eae8e3;
+  --color-surface-2: #e2e0da;
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  --radius: 14px;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --max-reading: 72ch;
+}
+
+/* =========================================================
+   2) THEME MAPPING
+   ========================================================= */
+
+html[data-theme="light"] {
+  --color-bg: var(--color-paper);
+  --color-fg: var(--color-ink);
+  --color-subtle: var(--color-muted);
+  --color-link: var(--color-accent);
+  --color-surface: #eae8e3;
+  --color-surface-2: #e2e0da;
+  --color-border: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+  --color-bg: var(--color-night);
+  --color-fg: var(--color-milk);
+  --color-subtle: var(--color-dim);
+  --color-link: #8fa39a;
+  --color-surface: #1c201d;
+  --color-surface-2: #222723;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="auto"] {
+  --color-bg: var(--color-paper);
+  --color-fg: var(--color-ink);
+  --color-subtle: var(--color-muted);
+  --color-link: var(--color-accent);
+  --color-surface: #eae8e3;
+  --color-surface-2: #e2e0da;
+  --color-border: rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] {
+    --color-bg: var(--color-night);
+    --color-fg: var(--color-milk);
+    --color-subtle: var(--color-dim);
+    --color-link: #8fa39a;
+    --color-surface: #1c201d;
+    --color-surface-2: #222723;
+    --color-border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* =========================================================
+   3) BASE DOCUMENT
+   ========================================================= */
+
+html,
+body {
+  min-height: 100%;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  @apply text-sm sm:text-base;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--color-fg) 35%, transparent);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   4) COMPONENT TOKENS
+   ========================================================= */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-[var(--radius)] border border-border bg-surface-2 px-5 py-2.5 text-sm font-medium text-fg transition-colors;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-primary:hover {
+    background-color: color-mix(in srgb, var(--color-fg) 8%, var(--color-surface-2));
+    text-decoration: none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-[var(--radius)] border border-border px-5 py-2.5 text-sm font-medium text-subtle transition-colors;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+    text-decoration: none;
+  }
+
+  .kicker {
+    @apply text-[12px] uppercase tracking-[0.42em] text-subtle;
+  }
+
+  .h1 {
+    @apply text-3xl font-semibold leading-[1.05] tracking-tight text-fg sm:text-5xl;
+  }
+
+  .h2 {
+    @apply text-2xl font-semibold leading-[1.12] tracking-tight text-fg sm:text-3xl;
+  }
+
+  .h3 {
+    @apply text-lg font-semibold leading-[1.22] text-fg sm:text-xl;
+  }
+
+  .h4 {
+    @apply text-base font-medium text-fg;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-subtle sm:text-lg;
+  }
+
+  .body {
+    @apply text-sm leading-relaxed text-subtle sm:text-base;
+  }
+
+  .small {
+    @apply text-xs leading-relaxed text-subtle;
+  }
+
+  .card {
+    @apply rounded-[var(--radius)] border border-border bg-surface p-6;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .surface-panel {
+    @apply rounded-[var(--radius)] border border-border bg-surface;
+  }
+
+  .section-rule {
+    @apply border-t border-border;
+  }
+}
+
+/* =========================================================
+   5) THEME TOGGLE
+   ========================================================= */
+
+@layer components {
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .theme-toggle__label {
+    color: var(--color-subtle);
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+
+  .theme-toggle__controls {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.2rem;
+    background: var(--color-bg);
+  }
+
+  .theme-toggle__btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--color-subtle);
+    font: inherit;
+    font-size: 0.8125rem;
+    line-height: 1;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .theme-toggle__btn:hover {
+    color: var(--color-fg);
+  }
+
+  .theme-toggle__btn[aria-pressed="true"] {
+    background: var(--color-surface);
+    color: var(--color-fg);
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+/* =========================================================
+   6) ARTICLE / RICH CONTENT
+   ========================================================= */
+
+@layer components {
+  .article-content {
+    max-width: var(--max-reading);
+  }
+
+  .article-content > * + * {
+    margin-top: 1.1rem;
+  }
+
+  .article-content h2 {
+    @apply mt-12 text-2xl font-semibold leading-[1.15] tracking-tight text-fg sm:text-3xl;
+  }
+
+  .article-content h3 {
+    @apply mt-8 text-lg font-semibold leading-[1.25] text-fg sm:text-xl;
+  }
+
+  .article-content p,
+  .article-content li {
+    @apply text-sm leading-relaxed text-subtle sm:text-base;
+  }
+
+  .article-content strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+
+  .article-content em {
+    font-style: italic;
+  }
+
+  .article-content a {
+    color: var(--color-fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--color-link) 55%, transparent);
+  }
+
+  .article-content ul,
+  .article-content ol {
+    @apply my-5 pl-5;
+  }
+
+  .article-content ul {
+    list-style: disc;
+  }
+
+  .article-content ol {
+    list-style: decimal;
+  }
+
+  .article-content li + li {
+    margin-top: 0.45rem;
+  }
+
+  .article-content hr {
+    @apply my-10 border-0 border-t border-border;
+  }
+
+  .article-content blockquote {
+    @apply my-8 rounded-[var(--radius)] border border-border bg-surface px-5 py-4 text-sm italic text-subtle sm:text-base;
+  }
+
+  .article-content code {
+    @apply rounded px-1.5 py-0.5 text-[0.92em];
+    background: color-mix(in srgb, var(--color-surface-2) 82%, transparent);
+    color: var(--color-fg);
+  }
+
+  .article-content pre {
+    @apply my-6 overflow-x-auto rounded-[var(--radius)] border border-border p-4 text-sm;
+    background: var(--color-surface);
+  }
+
+  .article-content pre code {
+    background: transparent;
+    padding: 0;
+  }
+
+  .article-content table {
+    @apply my-8 w-full border-collapse overflow-hidden rounded-[var(--radius)] border border-border text-left text-sm;
+  }
+
+  .article-content thead th {
+    @apply border-b border-border bg-surface px-4 py-3 font-medium text-fg;
+  }
+
+  .article-content tbody td {
+    @apply border-t border-border px-4 py-3 text-subtle;
+  }
+}
+
+/* =========================================================
+   7) FORM / UTILITY ADJUSTMENTS
+   ========================================================= */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reading-width {
+    max-width: var(--max-reading);
+  }
+}

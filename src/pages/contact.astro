@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Contact — Ouvrir une mission avec Studio Editorial"
+  description="Contacter Studio Editorial pour un article d’autorité, une page stratégique, un contenu décisionnel ou un renfort éditorial en marque blanche."
+>
+  <section class="py-20 sm:py-24">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="kicker">Contact</p>
+        <h1 class="mt-3 h1 text-balance">
+          Un besoin net, un sujet dense, une mission à cadrer ?
+        </h1>
+        <p class="mt-5 lead max-w-2xl">
+          Studio Editorial travaille sur des contenus à enjeu pour SaaS, entreprises tech
+          et agences spécialisées : article d’autorité, page stratégique, contenu
+          décisionnel, ou renfort éditorial en marque blanche.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Écrire à {site.email}
+          </a>
+          <a class="btn-secondary" href="/services">
+            Voir les services
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Quand écrire</p>
+          <h2 class="mt-3 h2">
+            Les demandes utiles ont généralement un périmètre identifiable.
+          </h2>
+          <p class="mt-4 body">
+            Le studio est plus pertinent quand le besoin est déjà un minimum formulé :
+            sujet, cible, type de contenu, enjeu business ou éditorial, délai réaliste.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="card bg-bg">
+              <p class="h4">Bon point de départ</p>
+              <ul class="mt-3 list-disc space-y-2 pl-5 body">
+                <li>un sujet ou un angle</li>
+                <li>une cible claire</li>
+                <li>une page ou un contenu à enjeu</li>
+                <li>un besoin de renfort cadré</li>
+              </ul>
+            </div>
+
+            <div class="card bg-bg">
+              <p class="h4">Moins utile</p>
+              <ul class="mt-3 list-disc space-y-2 pl-5 body">
+                <li>“on veut plus de contenu”</li>
+                <li>une demande sans cible</li>
+                <li>un volume sans logique</li>
+                <li>une mission floue à périmètre mouvant</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">Écrire directement</p>
+          <h3 class="mt-2 h3">Contact principal</h3>
+
+          <p class="mt-4 body">
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </p>
+
+          <p class="mt-5 body">
+            Communication écrite privilégiée. C’est le moyen le plus simple pour cadrer
+            proprement un besoin, éviter les malentendus et garder une trace exploitable.
+          </p>
+
+          <div class="mt-6 rounded-[var(--radius)] border border-border bg-bg px-4 py-4">
+            <p class="small">
+              Réponse attendue avec : faisabilité, cadrage initial, angle possible,
+              et orientation vers le bon type de mission.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="max-w-2xl">
+        <p class="kicker">Repères utiles</p>
+        <h2 class="mt-3 h2">Ce qu’il faut idéalement préciser dans le premier message</h2>
+        <p class="mt-4 body">
+          Pas pour bureaucratiser la prise de contact. Pour éviter les échanges vagues.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-2">
+        <article class="card">
+          <p class="h4">À inclure</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5 body">
+            <li>activité, produit ou secteur</li>
+            <li>cible principale</li>
+            <li>type de mission envisagé</li>
+            <li>sujet ou page concernée</li>
+            <li>objectif recherché</li>
+            <li>échéance approximative</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <p class="h4">Exemple utile</p>
+          <p class="mt-4 body">
+            “Nous sommes un SaaS B2B RH. Nous avons besoin d’une page stratégique sur un
+            cas d’usage précis, avec un angle plus solide que notre version actuelle.
+            Objectif : clarifier l’offre et mieux convertir sur une requête à valeur.
+            Délai souhaité : courant avril.”
+          </p>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <p class="kicker">Mission type</p>
+          <h3 class="mt-2 h3">Article d’autorité</h3>
+          <p class="mt-3 body">
+            Pour installer une lecture forte, clarifier un sujet de marché ou renforcer une
+            crédibilité sectorielle.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Mission type</p>
+          <h3 class="mt-2 h3">Page stratégique</h3>
+          <p class="mt-3 body">
+            Pour relier intention de recherche, argumentation, preuve et décision sur une page à enjeu.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <p class="kicker">Mission type</p>
+          <h3 class="mt-2 h3">Renfort marque blanche</h3>
+          <p class="mt-3 body">
+            Pour une agence ou une équipe qui a déjà le cadre, mais veut une exécution fiable.
+          </p>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Avant contact</p>
+          <h2 class="mt-3 h2">Choisir le bon point d’entrée</h2>
+          <p class="mt-4 body">
+            Si le besoin n’est pas encore complètement stabilisé, le plus utile est de repartir
+            du bon niveau : offre, preuve ou lecture.
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          <a class="card hover:no-underline" href="/services">
+            <p class="kicker">Offre</p>
+            <p class="mt-2 h3">Voir les services</p>
+            <p class="mt-3 body">
+              Pour identifier le type de mission pertinent.
+            </p>
+          </a>
+
+          <a class="card hover:no-underline" href="/portfolio">
+            <p class="kicker">Preuve</p>
+            <p class="mt-2 h3">Voir le portfolio</p>
+            <p class="mt-3 body">
+              Pour évaluer le niveau, les angles et les démonstrations éditoriales.
+            </p>
+          </a>
+
+          <a class="card hover:no-underline" href="/articles">
+            <p class="kicker">Lecture</p>
+            <p class="mt-2 h3">Parcourir les analyses</p>
+            <p class="mt-3 body">
+              Pour comprendre la ligne du studio avant toute prise de contact.
+            </p>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="h2 text-balance">
+            Le besoin est suffisamment net ?
+          </h2>
+          <p class="mt-4 body">
+            Le plus simple reste un message écrit avec contexte, cible, enjeu et délai.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Écrire à {site.email}
+          </a>
+          <a class="btn-secondary" href="/services">
+            Voir les services
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
