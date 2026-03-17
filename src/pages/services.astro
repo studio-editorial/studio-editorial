@@ -1,28 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/Container.astro";
+import { site } from "../data/site";
 ---
 
 <BaseLayout
-  title="Services — Articles d’autorité, pages stratégiques et renfort éditorial"
-  description="Articles d’autorité, pages stratégiques SEO / conversion et renfort éditorial en marque blanche pour SaaS, entreprises tech et agences spécialisées."
+  title="Services — Articles, pages stratégiques et renfort éditorial pour SaaS et tech"
+  description="Article de référence, page stratégique et renfort éditorial en marque blanche pour SaaS, entreprises tech et agences spécialisées."
 >
   <section class="py-20 sm:py-24">
     <Container>
-      <div class="max-w-4xl">
+      <div class="max-w-3xl">
         <p class="kicker">Services</p>
         <h1 class="mt-3 h1 text-balance">
-          Trois types de missions.<br />Pas une collection de livrables flous.
+          Articles, pages et renfort éditorial pour faire comprendre plus vite et décider plus clairement.
         </h1>
-        <p class="mt-5 lead max-w-3xl">
-          Studio Editorial intervient quand il faut clarifier un sujet, soutenir une
-          acquisition plus intelligente ou produire un contenu exigeant sans transformer
-          le site en média bavard.
+        <p class="mt-5 lead max-w-2xl">
+          Pour SaaS, entreprises tech et agences qui ont besoin d’un texte vraiment utile :
+          cadré, lisible, crédible, et directement exploitable.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a class="btn-primary" href="/contact">Parler d’un projet</a>
-          <a class="btn-secondary" href="/portfolio">Voir les preuves</a>
+        <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Décrire votre besoin
+          </a>
+          <a class="btn-secondary" href="/portfolio">
+            Voir les preuves
+          </a>
         </div>
       </div>
     </Container>
@@ -31,68 +35,44 @@ import Container from "../components/Container.astro";
   <section class="section-rule bg-surface py-20 sm:py-24">
     <Container>
       <div class="max-w-2xl">
-        <p class="kicker">Offres</p>
-        <h2 class="mt-3 h2">Ce qu’un client peut réellement acheter</h2>
+        <p class="kicker">Choisir vite</p>
+        <h2 class="mt-3 h2 text-balance">
+          Le plus utile est de partir du problème, pas du format.
+        </h2>
         <p class="mt-4 body">
-          Chaque mission correspond à un problème identifiable. Le but n’est pas de vendre
-          “du contenu”. Le but est d’ouvrir le bon chantier.
+          En pratique, trois cas reviennent le plus souvent.
         </p>
       </div>
 
       <div class="mt-10 grid gap-4 lg:grid-cols-3">
         <article class="card bg-bg">
-          <p class="kicker">Offre 01</p>
-          <h3 class="mt-2 h3">Article d’autorité</h3>
+          <p class="h4">Vous avez déjà un brief clair et un angle défini</p>
           <p class="mt-3 body">
-            Pour installer une lecture de marché, clarifier un sujet dense, ou faire monter
-            la crédibilité éditoriale d’une marque SaaS ou tech.
+            Vous cherchez surtout de l’exécution propre, fiable, et compatible avec un cadre déjà posé.
           </p>
-
-          <ul class="mt-5 list-disc space-y-2 pl-5 body">
-            <li>Angle éditorial net</li>
-            <li>Structure longue lisible</li>
-            <li>Hiérarchie Hn exploitable</li>
-            <li>Positionnement clair, sans remplissage</li>
-          </ul>
-
-          <p class="mt-5 small">Cadre et tarif : sur devis, selon profondeur et rôle du contenu.</p>
+          <p class="mt-5 body font-medium text-fg">
+            → Renfort éditorial en marque blanche
+          </p>
         </article>
 
         <article class="card bg-bg">
-          <p class="kicker">Offre 02</p>
-          <h3 class="mt-2 h3">Page stratégique SEO / conversion</h3>
+          <p class="h4">Vous avez un sujet important, mais pas encore la bonne pièce</p>
           <p class="mt-3 body">
-            Pour une page à enjeu : page service, page solution, page catégorie ou contenu
-            décisionnel relié à une intention de recherche utile.
+            Il faut clarifier, structurer et rendre le sujet lisible sans le simplifier bêtement.
           </p>
-
-          <ul class="mt-5 list-disc space-y-2 pl-5 body">
-            <li>Promesse et angle de page</li>
-            <li>Argumentation orientée décision</li>
-            <li>Preuve, objections, CTA</li>
-            <li>Structure lisible pour SEO et conversion</li>
-          </ul>
-
-          <p class="mt-5 small">Cadre et tarif : sur devis, selon enjeu commercial et niveau de reprise stratégique.</p>
+          <p class="mt-5 body font-medium text-fg">
+            → Article de référence
+          </p>
         </article>
 
         <article class="card bg-bg">
-          <p class="kicker">Offre 03</p>
-          <h3 class="mt-2 h3">Renfort éditorial en marque blanche</h3>
+          <p class="h4">Vous avez une page qui n’aide pas assez à comprendre ou décider</p>
           <p class="mt-3 body">
-            Pour les agences ou équipes déjà structurées qui veulent déléguer la rédaction
-            d’un long format sans perdre en tenue, lisibilité ou fiabilité.
+            Le fond existe, mais la promesse, la progression et les points de décision restent faibles.
           </p>
-
-          <ul class="mt-5 list-disc space-y-2 pl-5 body">
-            <li>Brief fourni en amont</li>
-            <li>Texte long format prêt à intégrer</li>
-            <li>Structure Hn propre</li>
-            <li>1 série de retours</li>
-          </ul>
-
-          <p class="mt-5 h4">390 € HT</p>
-          <p class="small">Article long format de 1 500 à 2 000 mots.</p>
+          <p class="mt-5 body font-medium text-fg">
+            → Page stratégique
+          </p>
         </article>
       </div>
     </Container>
@@ -100,55 +80,180 @@ import Container from "../components/Container.astro";
 
   <section class="section-rule py-20 sm:py-24">
     <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-        <div>
-          <p class="kicker">Fonctionnement</p>
-          <h2 class="mt-3 h2">Comment une mission se déroule</h2>
+      <div class="max-w-2xl">
+        <p class="kicker">Interventions</p>
+        <h2 class="mt-3 h2 text-balance">
+          Trois formats, selon le niveau réel du besoin.
+        </h2>
+        <p class="mt-4 body">
+          Chaque intervention a un périmètre clair, un usage précis, et un livrable exploitable.
+        </p>
+      </div>
 
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="card">
-              <p class="h4">1. Cadrage</p>
-              <p class="mt-2 body">
-                Sujet, cible, maturité, objectif de lecture, contraintes, angle utile.
-              </p>
+      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <article class="card">
+          <p class="kicker">01</p>
+          <h3 class="mt-2 h3">Article de référence</h3>
+          <p class="mt-3 body">
+            Pour installer une position, rendre un sujet lisible, ou produire une pièce forte
+            qui tient à la fois sur le fond, la structure et la lecture.
+          </p>
+
+          <div class="mt-5 space-y-3">
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+              <p class="mt-1 body">un sujet compte vraiment, mais reste mal traité, trop vague ou trop technique</p>
             </div>
 
-            <div class="card">
-              <p class="h4">2. Structure</p>
-              <p class="mt-2 body">
-                Promesse, plan, logique d’argumentation, place de la preuve.
-              </p>
-            </div>
-
-            <div class="card">
-              <p class="h4">3. Production</p>
-              <p class="mt-2 body">
-                Rédaction dense, claire, tenue éditoriale, niveau de langage adapté.
-              </p>
-            </div>
-
-            <div class="card">
-              <p class="h4">4. Livraison</p>
-              <p class="mt-2 body">
-                Texte propre, prêt à être publié, repris ou intégré à un système existant.
-              </p>
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Comprend</p>
+              <ul class="mt-2 list-disc space-y-2 pl-5 body">
+                <li>angle éditorial net</li>
+                <li>structure longue exploitable</li>
+                <li>hiérarchie Hn claire</li>
+                <li>1 série de retours consolidés</li>
+              </ul>
             </div>
           </div>
+
+          <p class="mt-6 h4">À partir de 790 € HT</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-secondary" href="/portfolio">
+              Voir des exemples proches
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="kicker">02</p>
+          <h3 class="mt-2 h3">Page stratégique</h3>
+          <p class="mt-3 body">
+            Pour une page service, solution ou landing page qui doit aider à comprendre,
+            se situer et décider sans gonfler artificiellement la promesse.
+          </p>
+
+          <div class="mt-5 space-y-3">
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+              <p class="mt-1 body">la page existe, mais ne fait pas assez le travail de clarification et de conversion</p>
+            </div>
+
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Comprend</p>
+              <ul class="mt-2 list-disc space-y-2 pl-5 body">
+                <li>lecture critique de l’existant</li>
+                <li>promesse reprise et clarifiée</li>
+                <li>structure argumentative complète</li>
+                <li>objections et CTA retravaillés</li>
+                <li>1 série de retours consolidés</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-6 h4">À partir de 1 190 € HT</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-secondary" href="/portfolio">
+              Voir des exemples proches
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="kicker">03</p>
+          <h3 class="mt-2 h3">Renfort éditorial en marque blanche</h3>
+          <p class="mt-3 body">
+            Pour les agences et consultants qui ont déjà le cadre, mais pas la bande
+            passante pour produire au bon niveau de tenue.
+          </p>
+
+          <div class="mt-5 space-y-3">
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+              <p class="mt-1 body">le brief, l’angle et le niveau attendu sont déjà cadrés en amont</p>
+            </div>
+
+            <div>
+              <p class="small uppercase tracking-[0.2em]">Comprend</p>
+              <ul class="mt-2 list-disc space-y-2 pl-5 body">
+                <li>article de 1 500 à 2 000 mots</li>
+                <li>brief fourni en amont</li>
+                <li>structure propre, ton respecté</li>
+                <li>1 série de retours consolidés</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-6 h4">À partir de 390 € HT / article</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-secondary" href="/marque-blanche">
+              Voir la page dédiée
+            </a>
+          </div>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Cadre commun</p>
+          <h2 class="mt-3 h2 text-balance">
+            Ce qui est inclus, et ce qui ne l’est pas.
+          </h2>
+          <p class="mt-4 body">
+            L’idée n’est pas d’ouvrir des missions floues, mais de produire une pièce nette,
+            avec un périmètre compréhensible dès le départ.
+          </p>
         </div>
 
-        <div class="card">
-          <p class="kicker">Ce que Studio Editorial ne fait pas</p>
-          <ul class="mt-5 list-disc space-y-3 pl-5 body">
-            <li>Remplir un blog avec des articles génériques pour faire du volume</li>
-            <li>Écrire sans angle, sans cible claire, ou sans rôle dans le parcours de lecture</li>
-            <li>Multiplier les allers-retours flous faute de cadrage initial</li>
-            <li>Produire du jargon marketing pour donner une impression de sophistication</li>
-          </ul>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="card bg-bg">
+            <p class="h4">Inclus</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 body">
+              <li>un périmètre cadré</li>
+              <li>une structure pensée pour le support</li>
+              <li>un texte directement exploitable</li>
+              <li>une seule série de retours consolidés</li>
+            </ul>
+          </article>
 
-          <p class="mt-6 rounded-[var(--radius)] border border-border bg-surface px-4 py-3 body">
-            Le studio est plus utile sur des sujets nets, avec un enjeu réel, qu’au milieu
-            d’une machine à contenu mal cadrée.
+          <article class="card bg-bg">
+            <p class="h4">Hors champ</p>
+            <ul class="mt-4 list-disc space-y-2 pl-5 body">
+              <li>production SEO industrielle</li>
+              <li>textes de remplissage</li>
+              <li>missions floues à périmètre mouvant</li>
+              <li>promesses gonflées artificiellement</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div class="max-w-2xl">
+          <p class="kicker">Preuves</p>
+          <h2 class="mt-3 h2 text-balance">
+            Le portfolio montre le niveau d’intervention avant prise de contact.
+          </h2>
+          <p class="mt-4 body">
+            Tu peux y lire les pièces par angle : business, système, conversion,
+            technique ou production.
           </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-secondary" href="/portfolio">
+            Consulter le portfolio
+          </a>
         </div>
       </div>
     </Container>
@@ -156,49 +261,24 @@ import Container from "../components/Container.astro";
 
   <section class="section-rule bg-surface py-20 sm:py-24">
     <Container>
-      <div class="grid gap-4 lg:grid-cols-3">
-        <article class="card bg-bg">
-          <p class="kicker">Quand choisir l’article d’autorité</p>
-          <p class="mt-3 body">
-            Quand il faut poser une lecture forte, ouvrir un territoire éditorial, ou faire
-            exister une expertise au-delà de la simple requête SEO.
-          </p>
-        </article>
-
-        <article class="card bg-bg">
-          <p class="kicker">Quand choisir la page stratégique</p>
-          <p class="mt-3 body">
-            Quand une page doit convertir mieux, clarifier une offre, ou traiter une requête
-            à enjeu avec plus de tenue et moins de banalité.
-          </p>
-        </article>
-
-        <article class="card bg-bg">
-          <p class="kicker">Quand choisir le renfort agence</p>
-          <p class="mt-3 body">
-            Quand le cadre existe déjà, que le brief est clair, et qu’il faut simplement une
-            exécution solide, propre et fiable.
-          </p>
-        </article>
-      </div>
-    </Container>
-  </section>
-
-  <section class="section-rule py-20 sm:py-24">
-    <Container>
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
         <div class="max-w-2xl">
-          <h2 class="h2 text-balance">
-            Le chantier est déjà identifié ?
+          <p class="kicker">Prise de contact</p>
+          <h2 class="mt-3 h2 text-balance">
+            Vous avez un sujet, une page ou un flux éditorial à traiter ?
           </h2>
           <p class="mt-4 body">
-            Le point de départ peut être un sujet, une cible, un format utile ou un cadre de production déjà formulé.
+            Décrivez le besoin, même de façon incomplète. Le bon format se détermine ensuite.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-3">
-          <a class="btn-primary" href="/contact">Parler d’un projet</a>
-          <a class="btn-secondary" href="/portfolio">Voir les preuves</a>
+        <div class="grid gap-3 sm:flex sm:flex-wrap">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Décrire votre besoin
+          </a>
+          <a class="btn-secondary" href="/contact">
+            Voir la page contact
+          </a>
         </div>
       </div>
     </Container>

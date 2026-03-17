@@ -1,0 +1,218 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Marque blanche — Renfort éditorial pour agences et consultants"
+  description="Renfort éditorial en marque blanche pour agences SEO, content et consultants : rédaction d’articles longs à brief fourni, sans réécriture lourde derrière."
+>
+  <section class="py-20 sm:py-24">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="kicker">Marque blanche</p>
+        <h1 class="mt-3 h1 text-balance">
+          Renfort éditorial en marque blanche pour agences et consultants.
+        </h1>
+        <p class="mt-5 lead max-w-2xl">
+          Vous pilotez déjà la stratégie. Vous avez besoin d’un relais fiable pour produire
+          sans réécrire derrière.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Présenter un brief
+          </a>
+          <a class="btn-secondary" href="/portfolio">
+            Voir une preuve de production
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Le cadre</p>
+          <h2 class="mt-3 h2 text-balance">
+            Une offre de production, pas un rattrapage stratégique.
+          </h2>
+          <p class="mt-4 body">
+            Cette intervention est conçue pour les structures qui ont déjà un angle, un
+            brief exploitable, une cible claire, et un vrai besoin d’exécution propre.
+          </p>
+          <p class="mt-4 body">
+            Le but n’est pas d’ajouter du volume. Le but est de livrer un texte publiable,
+            cohérent avec votre cadre, et suffisamment solide pour éviter la réécriture
+            lourde.
+          </p>
+        </div>
+
+        <article class="card">
+          <p class="kicker">Format</p>
+          <h3 class="mt-2 h3">Article long en marque blanche</h3>
+
+          <ul class="mt-5 list-disc space-y-2 pl-5 body">
+            <li>1 500 à 2 000 mots</li>
+            <li>brief fourni en amont</li>
+            <li>structure Hn propre</li>
+            <li>ton et positionnement respectés</li>
+            <li>1 série de retours consolidés</li>
+          </ul>
+
+          <p class="mt-6 h4">À partir de 390 € HT / article</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-primary" href={`mailto:${site.email}`}>
+              Présenter un brief
+            </a>
+          </div>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="max-w-2xl">
+        <p class="kicker">Périmètre</p>
+        <h2 class="mt-3 h2 text-balance">
+          Ce qui est inclus, et ce qui ne l’est pas.
+        </h2>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-2">
+        <article class="card">
+          <p class="h4">Inclus</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5 body">
+            <li>rédaction complète</li>
+            <li>structuration éditoriale du texte</li>
+            <li>respect du brief et du ton demandé</li>
+            <li>réajustements sur une série de retours consolidés</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <p class="h4">Non inclus</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5 body">
+            <li>recherche d’angle</li>
+            <li>cadrage stratégique complet</li>
+            <li>refonte du brief</li>
+            <li>sourcing lourd non transmis</li>
+            <li>optimisation SEO avancée hors brief</li>
+            <li>réécriture complète après changement de direction</li>
+          </ul>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div class="max-w-2xl">
+          <p class="kicker">Brief exploitable</p>
+          <h2 class="mt-3 h2 text-balance">
+            Ce que le brief doit contenir.
+          </h2>
+          <p class="mt-4 body">
+            Si le brief ne tient pas, le problème n’est pas la rédaction. Le problème est en amont.
+          </p>
+        </div>
+
+        <article class="card">
+          <ul class="list-disc space-y-2 pl-5 body">
+            <li>le sujet exact</li>
+            <li>la cible</li>
+            <li>l’objectif de la pièce</li>
+            <li>l’angle attendu</li>
+            <li>les points à couvrir</li>
+            <li>les sources ou matériaux utiles</li>
+            <li>le niveau de ton visé</li>
+          </ul>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="grid gap-4 lg:grid-cols-2">
+        <article class="card">
+          <p class="kicker">Pour qui</p>
+          <h3 class="mt-2 h3">Le format est adapté si</h3>
+          <ul class="mt-4 list-disc space-y-2 pl-5 body">
+            <li>vous êtes une agence SEO ou content</li>
+            <li>vous êtes consultant en acquisition ou en contenu</li>
+            <li>la stratégie existe déjà</li>
+            <li>vous devez absorber un flux sans dégrader le niveau</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <p class="kicker">Filtre utile</p>
+          <h3 class="mt-2 h3">Le format n’est pas adapté si</h3>
+          <ul class="mt-4 list-disc space-y-2 pl-5 body">
+            <li>vous cherchez “plus de contenu” sans angle</li>
+            <li>le sujet n’est pas cadré</li>
+            <li>la stratégie reste à construire</li>
+            <li>le texte doit compenser un brief faible ou contradictoire</li>
+          </ul>
+        </article>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule bg-surface py-20 sm:py-24">
+    <Container>
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-2xl">
+          <p class="kicker">Pourquoi cette offre existe</p>
+          <h2 class="h2 text-balance">
+            Certaines structures n’ont pas besoin d’un consultant de plus.
+          </h2>
+          <p class="mt-4 body">
+            Elles ont besoin d’un exécutant solide, capable de tenir un niveau propre sans
+            friction inutile.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-secondary" href="/portfolio">
+            Voir le portfolio
+          </a>
+          <a class="btn-secondary" href="/services">
+            Revenir aux services
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-rule py-20 sm:py-24">
+    <Container>
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="h2 text-balance">
+            Vous avez un brief, un contexte, une cible et un délai ?
+          </h2>
+          <p class="mt-4 body">
+            Envoyez-les. Je dirai rapidement si le cadre est bon pour avancer.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-primary" href={`mailto:${site.email}`}>
+            Présenter un brief
+          </a>
+          <a class="btn-secondary" href="/contact">
+            Voir la page contact
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

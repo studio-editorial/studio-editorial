@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 const getArticleDate = (entry: any) => entry.data.pubDate ?? entry.data.date;
 
 const articles = (await getCollection("articles"))
-  .filter((entry) => !entry.data.draft)
+  .filter((entry) => !entry.data.draft && entry.data.articles !== false)
   .sort((a, b) => +new Date(getArticleDate(b)) - +new Date(getArticleDate(a)));
 
 const featured =
@@ -94,13 +94,13 @@ const getReadingTime = (entry: any) => {
             <p class="kicker">Rôle de cette page</p>
             <p class="mt-3 body">
               L’archive rassemble la ligne éditoriale du studio. Le portfolio, lui,
-              sélectionne quelques pièces pour répondre à des objections commerciales
-              précises. Les deux pages ne doivent plus se confondre.
+              sélectionne certaines pièces pour répondre à des objections commerciales
+              précises. Les deux pages ne servent pas le même usage.
             </p>
 
             <ul class="mt-5 list-disc space-y-2 pl-5 body">
               <li>Ici : lecture chronologique et base de pensée</li>
-              <li>Portfolio : preuves triées par utilité commerciale</li>
+              <li>Portfolio : preuves triées par angle commercial</li>
               <li>Services : ce qu’un client peut réellement acheter</li>
             </ul>
           </div>
@@ -177,8 +177,8 @@ const getReadingTime = (entry: any) => {
         </div>
 
         <div class="flex flex-wrap gap-3">
-          <a class="btn-primary" href="/portfolio">Voir les preuves</a>
-          <a class="btn-secondary" href="/services">Voir les services</a>
+            <a class="btn-primary" href="/portfolio">Voir le portfolio</a>
+            <a class="btn-secondary" href="/services">Voir les services</a>
         </div>
       </div>
     </Container>
