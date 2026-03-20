@@ -14,5 +14,5 @@ export const site = {
   owner: "Studio Editorial",
   legalName: "Studio Editorial",
 
-  socialImage: "/og/og-default.png",
+  socialImage: "/og/studio-editorial-og.png",
 };

@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { site } from "../data/site";
 import "../styles/global.css";
+import SEO from "../components/SEO.astro";
 
 type Props = {
   title?: string;
@@ -21,18 +22,6 @@ const {
   type = "website",
   noindex = false,
 } = Astro.props;
-
-const siteUrl = Astro.site ?? new URL(site.url);
-const pathname = Astro.url?.pathname ?? "/";
-const canonicalUrl = canonical
-  ? new URL(canonical, siteUrl).toString()
-  : new URL(pathname, siteUrl).toString();
-
-const pageTitle = title ? `${title} · ${site.name}` : site.title;
-const pageDescription = description ?? site.description;
-const ogImage = image.startsWith("http")
-  ? image
-  : new URL(image, siteUrl).toString();
 ---
 
 <!DOCTYPE html>
@@ -49,28 +38,14 @@ const ogImage = image.startsWith("http")
       })();
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-    <link rel="canonical" href={canonicalUrl} />
-
-    <meta property="og:locale" content={site.locale} />
-    <meta property="og:site_name" content={site.name} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content={type} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={ogImage} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content={ogImage} />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      canonical={canonical}
+      type={type}
+      noindex={noindex}
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

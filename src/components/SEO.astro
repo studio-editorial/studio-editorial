@@ -1,0 +1,45 @@
+---
+const {
+  title = "Studio Editorial",
+  description = "Contenus clairs pour sujets exigeants",
+  image = "/og/studio-editorial-og.png",
+  canonical,
+  type = "website",
+  noindex = false,
+} = Astro.props;
+
+const resolvedCanonical = canonical
+  ? new URL(canonical, Astro.site ?? Astro.url).toString()
+  : new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+
+const ogImage = new URL(image, Astro.site ?? Astro.url).toString();
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={resolvedCanonical} />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#1A1B1A" />
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={resolvedCanonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="Studio Editorial" />
+<meta property="og:locale" content="fr_FR" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
