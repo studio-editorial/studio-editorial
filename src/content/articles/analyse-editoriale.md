@@ -421,6 +421,3 @@ Elle a besoin d’être plus nette.
 ---
 
 Si vous voulez clarifier une page stratégique, un service ou un contenu à intention commerciale, le plus utile est de partir d’un besoin net.
-
-[Voir les services](/services)  
-[Parler d’un projet](/contact)

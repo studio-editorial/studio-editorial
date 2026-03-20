@@ -252,6 +252,3 @@ L’enjeu est de construire une page qui clarifie le message, réduit la frictio
 ---
 
 Si une page SaaS informe correctement mais convertit mal, le problème vient rarement d’un détail de copy. Il vient plus souvent de la structure éditoriale de la décision.
-
-[Voir les services](/services)  
-[Parler d’un projet](/contact)

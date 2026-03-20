@@ -230,6 +230,3 @@ C’est une façon d’étendre votre capacité de production sans détériorer 
 ---
 
 Si le cadre est déjà clair et que vous cherchez un renfort éditorial propre, discret et exploitable, on peut partir d’un brief net et d’un besoin identifié.
-
-[Voir la méthode](/methode)  
-[Parler d’un projet](/contact)

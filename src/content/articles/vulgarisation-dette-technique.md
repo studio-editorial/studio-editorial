@@ -272,6 +272,3 @@ Et c’est souvent celle que les SaaS posent trop tard.
 ---
 
 Si vous devez rendre lisible un sujet technique sans le vider de sa substance, le vrai travail éditorial commence là : relier complexité produit, lecture métier et décision.
-
-[Voir les preuves](/portfolio)  
-[Parler d’un projet](/contact)

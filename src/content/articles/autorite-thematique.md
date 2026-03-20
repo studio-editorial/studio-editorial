@@ -271,6 +271,3 @@ Et sans autorité, le volume finit presque toujours par devenir ce qu’il étai
 ---
 
 Si votre site publie beaucoup sans gagner vraiment en poids, le sujet n’est généralement pas la cadence seule. C’est l’architecture éditoriale, la cohérence du territoire et la fonction réelle de chaque pièce.
-
-[Voir les preuves](/portfolio)  
-[Parler d’un projet](/contact)

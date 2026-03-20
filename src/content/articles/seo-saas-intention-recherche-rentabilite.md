@@ -295,6 +295,3 @@ C’est aussi une meilleure question.
 ---
 
 Si votre SEO attire du trafic sans produire assez de pipeline, le sujet n’est généralement pas le volume. C’est l’alignement entre intention, contenu et enjeu business.
-
-[Voir les services](/services)  
-[Parler d’un projet](/contact)

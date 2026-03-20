@@ -313,6 +313,3 @@ Le reste, c’est souvent de la taxonomie déguisée en stratégie.
 ---
 
 Si votre stratégie éditoriale classe beaucoup mais fait peu avancer la décision, le sujet n’est généralement pas la répartition TOFU / MOFU / BOFU. C’est la fonction réelle de chaque contenu, le niveau de maturité qu’il traite et la friction qu’il réduit vraiment.
-
-[Voir les preuves](/portfolio)  
-[Parler d’un projet](/contact)
