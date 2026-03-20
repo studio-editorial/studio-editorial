@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Astro
+Sitemap: https://studio-editorial.fr/sitemap-index.xml
