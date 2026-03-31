@@ -5,15 +5,15 @@ import { site } from "../data/site";
 ---
 
 <BaseLayout
-  title="Services — Articles, pages stratégiques et renfort éditorial pour SaaS et tech"
-  description="Article de référence, page stratégique et renfort éditorial en marque blanche pour SaaS, entreprises tech et agences spécialisées."
+  title="Services — Audit, pages stratégiques et renfort éditorial pour SaaS et tech"
+  description="Audit éditorial asynchrone, page stratégique, article de référence et renfort éditorial en marque blanche pour SaaS, entreprises tech et agences spécialisées."
 >
   <section class="hero-section page-section">
     <Container>
       <div class="max-w-3xl">
         <p class="kicker">Services</p>
         <h1 class="mt-3 h1 text-balance">
-          Articles, pages et renfort éditorial pour faire comprendre plus vite et décider plus clairement.
+          Audit, pages et renfort éditorial pour faire comprendre plus vite et décider plus clairement.
         </h1>
         <p class="mt-5 lead max-w-2xl">
           Pour SaaS, entreprises tech et agences qui ont besoin d’un texte vraiment utile :
@@ -34,44 +34,55 @@ import { site } from "../data/site";
 
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="max-w-2xl">
+      <div class="max-w-3xl">
         <p class="kicker">Choisir vite</p>
         <h2 class="mt-3 h2 text-balance">
           Le plus utile est de partir du problème, pas du format.
         </h2>
         <p class="mt-4 body">
-          En pratique, trois cas reviennent le plus souvent.
+          En pratique, quatre cas reviennent le plus souvent.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4 lg:grid-cols-3">
-        <article class="card bg-bg">
-          <p class="h4">Vous avez déjà un brief clair et un angle défini</p>
+      <div class="mt-10 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+        <article class="card bg-bg h-full flex flex-col">
+          <p class="h4">Vous avez déjà une page ou un actif à examiner</p>
           <p class="mt-3 body">
-            Vous cherchez surtout de l’exécution propre, fiable, et compatible avec un cadre déjà posé.
+            Avant de réécrire, il faut d’abord voir ce qui bloque vraiment :
+            angle, structure, preuve, objections, CTA.
           </p>
-          <p class="mt-5 body font-medium text-fg">
-            → Renfort éditorial en marque blanche
+          <p class="mt-auto pt-5 body font-medium text-fg">
+            → Autopsie éditoriale
           </p>
         </article>
 
-        <article class="card bg-bg">
+        <article class="card bg-bg h-full flex flex-col">
           <p class="h4">Vous avez un sujet important, mais pas encore la bonne pièce</p>
           <p class="mt-3 body">
             Il faut clarifier, structurer et rendre le sujet lisible sans le simplifier bêtement.
           </p>
-          <p class="mt-5 body font-medium text-fg">
+          <p class="mt-auto pt-5 body font-medium text-fg">
             → Article de référence
           </p>
         </article>
 
-        <article class="card bg-bg">
+        <article class="card bg-bg h-full flex flex-col">
           <p class="h4">Vous avez une page qui n’aide pas assez à comprendre ou décider</p>
           <p class="mt-3 body">
             Le fond existe, mais la promesse, la progression et les points de décision restent faibles.
           </p>
-          <p class="mt-5 body font-medium text-fg">
+          <p class="mt-auto pt-5 body font-medium text-fg">
             → Page stratégique
+          </p>
+        </article>
+        
+        <article class="card bg-bg h-full flex flex-col">
+          <p class="h4">Vous avez déjà un brief clair et un angle défini</p>
+          <p class="mt-3 body">
+            Vous cherchez surtout de l’exécution propre, fiable, et compatible avec un cadre déjà posé.
+          </p>
+          <p class="mt-auto pt-5 body font-medium text-fg">
+            → Renfort éditorial
           </p>
         </article>
       </div>
@@ -83,118 +94,178 @@ import { site } from "../data/site";
       <div class="max-w-2xl">
         <p class="kicker">Interventions</p>
         <h2 class="mt-3 h2 text-balance">
-          Trois formats, selon le niveau réel du besoin.
+          Quatre formats, selon le niveau réel du besoin.
         </h2>
         <p class="mt-4 body">
           Chaque intervention a un périmètre clair, un usage précis, et un livrable exploitable.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-5 lg:grid-cols-3">
-        <article class="card">
-          <p class="kicker">01</p>
-          <h3 class="mt-2 h3">Article de référence</h3>
-          <p class="mt-3 body">
-            Pour installer une position, rendre un sujet lisible, ou produire une pièce forte
-            qui tient à la fois sur le fond, la structure et la lecture.
-          </p>
+      <div class="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
+  <article class="card h-full flex flex-col">
+    <div>
+      <p class="kicker">00</p>
+      <h3 class="mt-2 h3">Autopsie éditoriale</h3>
+      <p class="mt-3 body">
+        Pour démonter une page ou un actif business avant de décider s’il faut corriger,
+        réécrire ou reconstruire.
+      </p>
+    </div>
 
-          <div class="mt-5 space-y-3">
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
-              <p class="mt-1 body">un sujet compte vraiment, mais reste mal traité, trop vague ou trop technique</p>
-            </div>
-
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Comprend</p>
-              <ul class="mt-2 list-disc space-y-2 pl-5 body">
-                <li>angle éditorial net</li>
-                <li>structure longue exploitable</li>
-                <li>hiérarchie Hn claire</li>
-                <li>1 série de retours consolidés</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="mt-6 h4">À partir de 790 € HT</p>
-
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a class="btn-secondary" href="/portfolio">
-              Voir des exemples proches
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <p class="kicker">02</p>
-          <h3 class="mt-2 h3">Page stratégique</h3>
-          <p class="mt-3 body">
-            Pour une page service, solution ou landing page qui doit aider à comprendre,
-            se situer et décider sans gonfler artificiellement la promesse.
-          </p>
-
-          <div class="mt-5 space-y-3">
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
-              <p class="mt-1 body">la page existe, mais ne fait pas assez le travail de clarification et de conversion</p>
-            </div>
-
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Comprend</p>
-              <ul class="mt-2 list-disc space-y-2 pl-5 body">
-                <li>lecture critique de l’existant</li>
-                <li>promesse reprise et clarifiée</li>
-                <li>structure argumentative complète</li>
-                <li>objections et CTA retravaillés</li>
-                <li>1 série de retours consolidés</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="mt-6 h4">À partir de 1 190 € HT</p>
-
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a class="btn-secondary" href="/portfolio">
-              Voir des exemples proches
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <p class="kicker">03</p>
-          <h3 class="mt-2 h3">Renfort éditorial en marque blanche</h3>
-          <p class="mt-3 body">
-            Pour les agences et consultants qui ont déjà le cadre, mais pas la bande
-            passante pour produire au bon niveau de tenue.
-          </p>
-
-          <div class="mt-5 space-y-3">
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Utile quand</p>
-              <p class="mt-1 body">le brief, l’angle et le niveau attendu sont déjà cadrés en amont</p>
-            </div>
-
-            <div>
-              <p class="small uppercase tracking-[0.2em]">Comprend</p>
-              <ul class="mt-2 list-disc space-y-2 pl-5 body">
-                <li>article de 1 500 à 2 000 mots</li>
-                <li>brief fourni en amont</li>
-                <li>structure propre, ton respecté</li>
-                <li>1 série de retours consolidés</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="mt-6 h4">À partir de 390 € HT / article</p>
-
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a class="btn-secondary" href="/marque-blanche">
-              Voir la page dédiée
-            </a>
-          </div>
-        </article>
+    <div class="mt-5 space-y-5">
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+        <p class="mt-2 body">
+          quelque chose existe déjà, mais ne produit pas assez de clarté, de crédibilité ou de tenue
+        </p>
       </div>
-    </Container>
+
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Comprend</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 body">
+          <li>analyse d’un actif unique</li>
+          <li>retour PDF annoté ou vidéo muette</li>
+          <li>frictions principales relevées</li>
+          <li>priorités de correction</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-8">
+      <p class="h4">À partir de 190 €</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn-secondary" href="/autopsie-editoriale">
+          Voir la page dédiée
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card h-full flex flex-col">
+    <div>
+      <p class="kicker">01</p>
+      <h3 class="mt-2 h3">Article référence</h3>
+      <p class="mt-3 body">
+        Pour installer une position, rendre un sujet lisible, ou produire une pièce forte
+        qui tient à la fois sur le fond, la structure et la lecture.
+      </p>
+    </div>
+
+    <div class="mt-5 space-y-5">
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+        <p class="mt-2 body">
+          un sujet compte vraiment, mais reste mal traité, trop vague ou trop technique
+        </p>
+      </div>
+
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Comprend</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 body">
+          <li>angle éditorial net</li>
+          <li>structure longue exploitable</li>
+          <li>hiérarchie Hn claire</li>
+          <li>1 série de retours consolidés</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-8">
+      <p class="h4">À partir de 790 €</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn-secondary" href="/portfolio">
+          Voir des exemples
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card h-full flex flex-col">
+    <div>
+      <p class="kicker">02</p>
+      <h3 class="mt-2 h3">Page stratégique</h3>
+      <p class="mt-3 body">
+        Pour une page service, solution ou landing page qui doit aider à comprendre et décider sans gonfler la promesse.
+      </p>
+    </div>
+
+    <div class="mt-5 space-y-5">
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+        <p class="mt-2 body">
+          la page existe, mais ne fait pas assez le travail de clarification et de conversion
+        </p>
+      </div>
+
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Comprend</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 body">
+          <li>lecture critique de l’existant</li>
+          <li>promesse reprise et clarifiée</li>
+          <li>structure argumentative complète</li>
+          <li>objections et CTA retravaillés</li>
+          <li>1 série de retours consolidés</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-8">
+      <p class="h4">À partir de 1 190 €</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn-secondary" href="/portfolio">
+          Voir des exemples
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card h-full flex flex-col">
+    <div>
+      <p class="kicker">03</p>
+      <h3 class="mt-2 h3">Renfort éditorial</h3>
+      <p class="mt-3 body">
+        Pour les agences et consultants qui ont déjà le cadre, mais pas la bande
+        passante pour produire au bon niveau de tenue.
+      </p>
+    </div>
+
+    <div class="mt-5 space-y-5">
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Utile quand</p>
+        <p class="mt-2 body">
+          le brief, l’angle et le niveau attendu sont déjà cadrés en amont
+        </p>
+      </div>
+
+      <div>
+        <p class="small uppercase tracking-[0.2em]">Comprend</p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 body">
+          <li>article de 1 500 à 2 000 mots</li>
+          <li>brief fourni en amont</li>
+          <li>structure propre, ton respecté</li>
+          <li>1 série de retours consolidés</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-8">
+      <p class="h4">À partir de 390 €</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn-secondary" href="/marque-blanche">
+          Voir la page dédiée
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+<p class="mt-6 small">
+  Prix indiqués sans TVA. TVA non applicable, art. 293 B du CGI.
+</p>
+</Container>
   </section>
 
   <section class="section-rule bg-surface hero-section page-section">
@@ -245,7 +316,7 @@ import { site } from "../data/site";
             Le portfolio montre le niveau d’intervention avant prise de contact.
           </h2>
           <p class="mt-4 body">
-            Tu peux y lire les pièces par angle : business, système, conversion,
+            Pour y lire les pièces par angle : business, système, conversion,
             technique ou production.
           </p>
         </div>
@@ -265,7 +336,7 @@ import { site } from "../data/site";
         <div class="max-w-2xl">
           <p class="kicker">Prise de contact</p>
           <h2 class="mt-3 h2 text-balance">
-            Vous avez un sujet, une page ou un flux éditorial à traiter ?
+            Vous avez une page à diagnostiquer, un sujet à traiter, ou un flux éditorial à absorber ?
           </h2>
           <p class="mt-4 body">
             Décrivez le besoin, même de façon incomplète. Le bon format se détermine ensuite.

@@ -6,7 +6,7 @@ import { site } from "../data/site";
 
 <BaseLayout
   title="Contact — Ouvrir une mission avec Studio Editorial"
-  description="Contacter Studio Editorial pour un article d’autorité, une page stratégique, un contenu décisionnel ou un renfort éditorial en marque blanche."
+  description="Contacter Studio Editorial pour une autopsie éditoriale, un article d’autorité, une page stratégique ou un renfort éditorial en marque blanche."
 >
   <section class="hero-section page-section">
     <Container>
@@ -17,8 +17,8 @@ import { site } from "../data/site";
         </h1>
         <p class="mt-5 lead max-w-2xl">
           Studio Editorial travaille sur des contenus à enjeu pour SaaS, entreprises tech
-          et agences spécialisées : article d’autorité, page stratégique, contenu
-          décisionnel, ou renfort éditorial en marque blanche.
+          et agences spécialisées : autopsie éditoriale, article d’autorité, page stratégique
+          ou renfort éditorial en marque blanche.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
@@ -43,7 +43,7 @@ import { site } from "../data/site";
           </h2>
           <p class="mt-4 body">
             Le studio est plus pertinent quand le besoin est déjà un minimum formulé :
-            sujet, cible, type de contenu, enjeu business ou éditorial, délai réaliste.
+            sujet, cible, type d’intervention, enjeu business ou éditorial, délai réaliste.
           </p>
 
           <div class="mt-8 grid gap-4 sm:grid-cols-2">
@@ -131,7 +131,15 @@ import { site } from "../data/site";
 
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="grid gap-4 lg:grid-cols-3">
+      <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+        <article class="card bg-bg">
+          <p class="kicker">Mission type</p>
+          <h3 class="mt-2 h3">Autopsie éditoriale</h3>
+          <p class="mt-3 body">
+            Pour partir d’un actif existant et identifier ce qui bloque avant de reprendre trop large.
+          </p>
+        </article>
+
         <article class="card bg-bg">
           <p class="kicker">Mission type</p>
           <h3 class="mt-2 h3">Article d’autorité</h3>
@@ -168,7 +176,7 @@ import { site } from "../data/site";
           <h2 class="mt-3 h2">Choisir le bon point d’entrée</h2>
           <p class="mt-4 body">
             Si le besoin n’est pas encore complètement stabilisé, le plus utile est de repartir
-            du bon niveau : offre, preuve ou lecture.
+            du bon niveau : offre, preuve, diagnostic ou lecture.
           </p>
         </div>
 
@@ -186,6 +194,14 @@ import { site } from "../data/site";
             <p class="mt-2 h3">Voir le portfolio</p>
             <p class="mt-3 body">
               Pour évaluer le niveau, les angles et les démonstrations éditoriales.
+            </p>
+          </a>
+
+          <a class="card hover:no-underline" href="/autopsie-editoriale">
+            <p class="kicker">Diagnostic</p>
+            <p class="mt-2 h3">Voir l’autopsie éditoriale</p>
+            <p class="mt-3 body">
+              Pour partir d’un actif existant quand le problème n’est pas encore complètement situé.
             </p>
           </a>
 

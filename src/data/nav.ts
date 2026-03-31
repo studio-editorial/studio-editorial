@@ -7,6 +7,7 @@ export const mainNav = [
 
 export const footerNav = [
   { label: "Services", href: "/services" },
+  { label: "Autopsie éditoriale", href: "/autopsie-editoriale" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Articles", href: "/articles" },
   { label: "Méthode", href: "/methode" },
