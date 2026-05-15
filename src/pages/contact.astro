@@ -5,239 +5,252 @@ import { site } from "../data/site";
 ---
 
 <BaseLayout
-  title="Contact — Ouvrir une mission avec Studio Editorial"
-  description="Contacter Studio Editorial pour une autopsie éditoriale, un article d’autorité, une page stratégique ou un renfort éditorial en marque blanche."
+  title="Contact — Studio Editorial"
+  {/* MODIFIÉ : Titre meta allégé. L'ancien titre "Ouvrir une mission" supposait
+      que le visiteur sait déjà ce qu'il veut. */}
+  description="Envoyez une page à diagnostiquer ou décrivez votre besoin en trois lignes. Studio Editorial revient avec un cadrage, pas un formulaire."
 >
+
+  {/* SECTION HERO — reformulée pour réduire la friction immédiatement.
+      L'ancienne version demandait un "besoin net" et un "sujet dense".
+      La nouvelle version dit : une URL suffit pour commencer. */}
   <section class="hero-section page-section">
     <Container>
       <div class="max-w-3xl">
         <p class="kicker">Contact</p>
         <h1 class="mt-3 h1 text-balance">
-          Un besoin net, un sujet dense, une mission à cadrer ?
+          Pas besoin d'un brief complet. Une URL et un problème ressenti suffisent.
         </h1>
         <p class="mt-5 lead max-w-2xl">
-          Studio Editorial travaille sur des contenus à enjeu pour SaaS, entreprises tech
-          et agences spécialisées : autopsie éditoriale, article d’autorité, page stratégique
-          ou renfort éditorial en marque blanche.
+          Le cadrage vient à l'échange. Ce qui compte au départ : savoir sur quoi
+          vous buttez et ce que vous espérez en sortie.
         </p>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a class="btn-primary" href={`mailto:${site.email}`}>
-            Écrire à {site.email}
-          </a>
-          <a class="btn-secondary" href="/services">
-            Voir les services
-          </a>
-        </div>
       </div>
     </Container>
   </section>
 
+  {/* SECTION FORMULAIRE — nouveau bloc central.
+      Remplace l'email nu par un formulaire 3 champs maximum.
+      Champs : URL concernée, problème ressenti, objectif visé.
+      Pas de champ budget, pas de champ échéance — ça vient à l'échange.
+      Utilise Netlify Forms (attribut netlify) compatible Astro/SSG.
+      Si l'hébergement n'est pas Netlify, remplacer par Formspree ou similaire. */}
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-        <div class="max-w-2xl">
-          <p class="kicker">Quand écrire</p>
-          <h2 class="mt-3 h2">
-            Les demandes utiles ont généralement un périmètre identifiable.
+      <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+
+        {/* FORMULAIRE PRINCIPAL */}
+        <div>
+          <p class="kicker">Formulaire de contact</p>
+          <h2 class="mt-3 h2 text-balance">
+            Une situation, quelques lignes. Le reste se précise ensemble.
           </h2>
           <p class="mt-4 body">
-            Le studio est plus pertinent quand le besoin est déjà un minimum formulé :
-            sujet, cible, type d’intervention, enjeu business ou éditorial, délai réaliste.
+            Pas besoin d'un brief complet. Décrivez ce qui se passe — le cadrage vient à l'échange.
           </p>
 
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="card bg-bg">
-              <p class="h4">Bon point de départ</p>
-              <ul class="mt-3 list-disc space-y-2 pl-5 body">
-                <li>un sujet ou un angle</li>
-                <li>une cible claire</li>
-                <li>une page ou un contenu à enjeu</li>
-                <li>un besoin de renfort cadré</li>
-              </ul>
+          <form
+            class="mt-8 grid gap-6"
+            action="https://formspree.io/f/mdabvqqg"
+            method="POST"
+          >
+
+            {/* CHAMP 1 : Sujet */}
+            <div class="grid gap-2">
+              <label for="subject" class="small uppercase tracking-[0.2em]">
+                Sujet <span class="text-fg">*</span>
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                required
+                class="w-full rounded-[var(--radius)] border border-border bg-bg px-4 py-3 body text-fg focus:outline-none focus:ring-2 focus:ring-fg/20"
+              >
+                <option value="" disabled selected>Sélectionner</option>
+                <option value="Autopsie éditoriale">Autopsie éditoriale</option>
+                <option value="Article d'autorité">Article d'autorité</option>
+                <option value="Page stratégique">Page stratégique</option>
+                <option value="Renfort marque blanche">Renfort marque blanche</option>
+                <option value="Autre">Autre</option>
+              </select>
             </div>
 
-            <div class="card bg-bg">
-              <p class="h4">Moins utile</p>
-              <ul class="mt-3 list-disc space-y-2 pl-5 body">
-                <li>“on veut plus de contenu”</li>
-                <li>une demande sans cible</li>
-                <li>un volume sans logique</li>
-                <li>une mission floue à périmètre mouvant</li>
-              </ul>
+            {/* CHAMP 2 : Contexte libre */}
+            <div class="grid gap-2">
+              <label for="context" class="small uppercase tracking-[0.2em]">
+                Contexte <span class="text-fg">*</span>
+              </label>
+              <textarea
+                id="context"
+                name="context"
+                required
+                rows="5"
+                placeholder="Décrivez votre situation, ce qui se passe, ce qui vous pose problème. Quelques lignes suffisent pour démarrer."
+                class="w-full rounded-[var(--radius)] border border-border bg-bg px-4 py-3 body placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20 resize-none"
+              ></textarea>
             </div>
-          </div>
+
+            {/* CHAMP 3 : Email */}
+            <div class="grid gap-2">
+              <label for="email" class="small uppercase tracking-[0.2em]">
+                Email <span class="text-fg">*</span>
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="votre@email.com"
+                class="w-full rounded-[var(--radius)] border border-border bg-bg px-4 py-3 body placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+              />
+            </div>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button type="submit" class="btn-primary">
+                Envoyer
+              </button>
+            </div>
+
+            <p class="small text-muted">
+              Réponse sous 48h ouvrées. Communication écrite privilégiée.
+            </p>
+          </form>
         </div>
 
-        <div class="card">
-          <p class="kicker">Écrire directement</p>
-          <h3 class="mt-2 h3">Contact principal</h3>
+        {/* COLONNE DROITE : Autopsie en point d'entrée alternatif + email direct */}
+        <div class="grid gap-4">
 
-          <p class="mt-4 body">
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-          </p>
-
-          <p class="mt-5 body">
-            Communication écrite privilégiée. C’est le moyen le plus simple pour cadrer
-            proprement un besoin, éviter les malentendus et garder une trace exploitable.
-          </p>
-
-          <div class="mt-6 rounded-[var(--radius)] border border-border bg-bg px-4 py-4">
-            <p class="small">
-              Réponse attendue avec : faisabilité, cadrage initial, angle possible,
-              et orientation vers le bon type de mission.
+          {/* AUTOPSIE — mise en avant comme alternative structurée */}
+          <article class="card bg-bg">
+            <p class="kicker">Point d'entrée recommandé</p>
+            <h3 class="mt-2 h3">Autopsie éditoriale</h3>
+            <p class="mt-3 body">
+              Si vous avez déjà une page qui ne convertit pas, l'autopsie est le point
+              de départ le plus direct : diagnostic asynchrone, frictions identifiées,
+              priorités de correction. Rendu sous 5 jours ouvrés.
             </p>
-          </div>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a class="btn-primary" href="/autopsie-editoriale">
+                Voir l'offre — à partir de 190 €
+              </a>
+            </div>
+          </article>
+
+          {/* EMAIL DIRECT — conservé pour les prospects qui préfèrent */}
+          <article class="card bg-bg">
+            <p class="kicker">Contact direct</p>
+            <h3 class="mt-2 h3">Par email</h3>
+            <p class="mt-3 body">
+              Préférez écrire directement ?
+            </p>
+            <p class="mt-2 body">
+              <a href={`mailto:${site.email}`} class="font-medium">{site.email}</a>
+            </p>
+            <p class="mt-3 small text-muted">
+              Un message court avec contexte et problème ressenti suffit.
+              Pas besoin de tout cadrer avant d'écrire.
+            </p>
+          </article>
+
         </div>
       </div>
     </Container>
   </section>
 
+  {/* SECTION "QUAND ÉCRIRE" — allégée et repositionnée.
+      Dans l'ancienne version, elle était en haut et demandait au prospect
+      d'auto-évaluer si sa demande était assez bien formée. Trop intimidant.
+      Déplacée après le formulaire, elle sert à rassurer, pas à filtrer. */}
   <section class="section-rule hero-section page-section">
     <Container>
-      <div class="max-w-2xl">
-        <p class="kicker">Repères utiles</p>
-        <h2 class="mt-3 h2">Ce qu’il faut idéalement préciser dans le premier message</h2>
-        <p class="mt-4 body">
-          Pas pour bureaucratiser la prise de contact. Pour éviter les échanges vagues.
+      <div class="max-w-3xl">
+        <p class="kicker">Bon à savoir</p>
+        <h2 class="mt-3 h2 text-balance">
+          Les demandes qui fonctionnent bien n'ont pas besoin d'être parfaites.
+        </h2>
+        <p class="mt-4 body max-w-2xl">
+          Un sujet vague mais une vraie douleur : ça marche. Un périmètre flou
+          mais une page concrète à montrer : ça marche aussi. Ce qui bloque,
+          c'est l'absence de problème réel — pas l'absence de brief complet.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4 lg:grid-cols-2">
-        <article class="card">
-          <p class="h4">À inclure</p>
-          <ul class="mt-4 list-disc space-y-2 pl-5 body">
-            <li>activité, produit ou secteur</li>
-            <li>cible principale</li>
-            <li>type de mission envisagé</li>
-            <li>sujet ou page concernée</li>
-            <li>objectif recherché</li>
-            <li>échéance approximative</li>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <div class="card bg-surface">
+          <p class="h4">Bon point de départ</p>
+          <ul class="mt-3 list-disc space-y-2 pl-5 body">
+            <li>une page qui existe mais ne convertit pas</li>
+            <li>un sujet à traiter sans savoir comment l'angle</li>
+            <li>une production à absorber avec un cadre existant</li>
+            <li>un besoin de diagnostic avant de décider</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="card">
-          <p class="h4">Exemple utile</p>
-          <p class="mt-4 body">
-            “Nous sommes un SaaS B2B RH. Nous avons besoin d’une page stratégique sur un
-            cas d’usage précis, avec un angle plus solide que notre version actuelle.
-            Objectif : clarifier l’offre et mieux convertir sur une requête à valeur.
-            Délai souhaité : courant avril.”
-          </p>
-        </article>
+        <div class="card bg-surface">
+          <p class="h4">Moins adapté</p>
+          <ul class="mt-3 list-disc space-y-2 pl-5 body">
+            <li>"on veut plus de contenu" sans objectif précis</li>
+            <li>une demande sans cible identifiable</li>
+            <li>un volume sans logique éditoriale</li>
+            <li>un périmètre mouvant à définir ensemble</li>
+          </ul>
+        </div>
       </div>
     </Container>
   </section>
 
+  {/* SECTION MISSIONS TYPES — inchangée, sert de réassurance en bas de page */}
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
+      <div class="max-w-2xl mb-10">
+        <p class="kicker">Missions types</p>
+        <h2 class="mt-3 h2 text-balance">
+          Quatre types d'intervention, un seul critère : que ça serve.
+        </h2>
+      </div>
+
       <div class="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         <article class="card bg-bg">
-          <p class="kicker">Mission type</p>
+          <p class="kicker">Diagnostic</p>
           <h3 class="mt-2 h3">Autopsie éditoriale</h3>
           <p class="mt-3 body">
-            Pour partir d’un actif existant et identifier ce qui bloque avant de reprendre trop large.
+            Pour partir d'un actif existant et identifier ce qui bloque
+            avant de reprendre trop large.
           </p>
+          <p class="mt-4 small font-medium text-fg">À partir de 190 €</p>
         </article>
 
         <article class="card bg-bg">
-          <p class="kicker">Mission type</p>
-          <h3 class="mt-2 h3">Article d’autorité</h3>
+          <p class="kicker">Pièce de fond</p>
+          <h3 class="mt-2 h3">Article d'autorité</h3>
           <p class="mt-3 body">
-            Pour installer une lecture forte, clarifier un sujet de marché ou renforcer une
-            crédibilité sectorielle.
+            Pour installer une lecture forte, clarifier un sujet de marché
+            ou renforcer une crédibilité sectorielle.
           </p>
+          <p class="mt-4 small font-medium text-fg">À partir de 790 €</p>
         </article>
 
         <article class="card bg-bg">
-          <p class="kicker">Mission type</p>
+          <p class="kicker">Page à enjeu</p>
           <h3 class="mt-2 h3">Page stratégique</h3>
           <p class="mt-3 body">
-            Pour relier intention de recherche, argumentation, preuve et décision sur une page à enjeu.
+            Pour relier intention de recherche, argumentation, preuve
+            et décision sur une page qui compte.
           </p>
+          <p class="mt-4 small font-medium text-fg">À partir de 1 190 €</p>
         </article>
 
         <article class="card bg-bg">
-          <p class="kicker">Mission type</p>
+          <p class="kicker">Production cadrée</p>
           <h3 class="mt-2 h3">Renfort marque blanche</h3>
           <p class="mt-3 body">
-            Pour une agence ou une équipe qui a déjà le cadre, mais veut une exécution fiable.
+            Pour une agence ou une équipe qui a déjà le cadre,
+            mais veut une exécution fiable.
           </p>
+          <p class="mt-4 small font-medium text-fg">À partir de 390 €</p>
         </article>
       </div>
     </Container>
   </section>
 
-  <section class="section-rule hero-section page-section">
-    <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-        <div class="max-w-2xl">
-          <p class="kicker">Avant contact</p>
-          <h2 class="mt-3 h2">Choisir le bon point d’entrée</h2>
-          <p class="mt-4 body">
-            Si le besoin n’est pas encore complètement stabilisé, le plus utile est de repartir
-            du bon niveau : offre, preuve, diagnostic ou lecture.
-          </p>
-        </div>
-
-        <div class="grid gap-4">
-          <a class="card hover:no-underline" href="/services">
-            <p class="kicker">Offre</p>
-            <p class="mt-2 h3">Voir les services</p>
-            <p class="mt-3 body">
-              Pour identifier le type de mission pertinent.
-            </p>
-          </a>
-
-          <a class="card hover:no-underline" href="/portfolio">
-            <p class="kicker">Preuve</p>
-            <p class="mt-2 h3">Voir le portfolio</p>
-            <p class="mt-3 body">
-              Pour évaluer le niveau, les angles et les démonstrations éditoriales.
-            </p>
-          </a>
-
-          <a class="card hover:no-underline" href="/autopsie-editoriale">
-            <p class="kicker">Diagnostic</p>
-            <p class="mt-2 h3">Voir l’autopsie éditoriale</p>
-            <p class="mt-3 body">
-              Pour partir d’un actif existant quand le problème n’est pas encore complètement situé.
-            </p>
-          </a>
-
-          <a class="card hover:no-underline" href="/articles">
-            <p class="kicker">Lecture</p>
-            <p class="mt-2 h3">Parcourir les analyses</p>
-            <p class="mt-3 body">
-              Pour comprendre la ligne du studio avant toute prise de contact.
-            </p>
-          </a>
-        </div>
-      </div>
-    </Container>
-  </section>
-
-  <section class="section-rule bg-surface hero-section page-section">
-    <Container>
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div class="max-w-2xl">
-          <h2 class="h2 text-balance">
-            Le besoin est suffisamment net ?
-          </h2>
-          <p class="mt-4 body">
-            Le plus simple reste un message écrit avec contexte, cible, enjeu et délai.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap gap-3">
-          <a class="btn-primary" href={`mailto:${site.email}`}>
-            Écrire à {site.email}
-          </a>
-          <a class="btn-secondary" href="/services">
-            Voir les services
-          </a>
-        </div>
-      </div>
-    </Container>
-  </section>
 </BaseLayout>

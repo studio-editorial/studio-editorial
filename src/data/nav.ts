@@ -16,5 +16,8 @@ export const footerNav = [
 
 export const legalNav = [
   { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "CGV", href: "/cgv" },
   { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+  
+  
 ];

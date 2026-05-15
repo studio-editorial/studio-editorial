@@ -1,0 +1,27 @@
+Objet : Autopsie éditoriale — confirmation et prise en charge
+
+Bonjour [Prénom],
+J'ai bien reçu votre demande concernant [URL ou courte description de la page].
+Je confirme la prise en charge de l'autopsie éditoriale. Voici comment ça se passe :
+1. Règlement
+Le paiement s'effectue avant démarrage, via le lien sécurisé ci-dessous :
+→ https://buy.stripe.com/eVq9AV7Owgei8tx40097G00
+2. Démarrage
+L'autopsie démarre dès réception du paiement.
+3. Rendu
+Vous recevez le document sous 5 jours ouvrés. Il comprend : analyse de l'actif, frictions identifiées, priorités de correction et recommandation de suite.
+
+En procédant au paiement, vous acceptez les conditions générales de vente disponibles à cette adresse : studio-editorial.fr/cgv
+
+Des questions avant de procéder ? Je reste disponible par retour d'email.
+Eric Bruet
+Studio Editorial
+studio-editorial.fr
+
+
+Sauvegarde ce template dans :
+
+Un brouillon Gmail/Outlook prêt à l'envoi
+Ou une note Notion avec le label "Template confirmation autopsie"
+
+À chaque formulaire reçu, tu personnalises juste le prénom et la description de la page — le reste est fixe. Deux minutes maximum par confirmation.

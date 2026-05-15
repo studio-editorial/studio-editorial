@@ -4,233 +4,460 @@ import Container from "../components/Container.astro";
 ---
 
 <BaseLayout
-  title="Autopsie éditoriale — Audit asynchrone de page ou d’actif business"
-  description="Diagnostic éditorial pour identifier ce qui bloque compréhension, crédibilité et décision sur une page existante."
+  title="Autopsie éditoriale — Diagnostic de page à 190 €"
+  description="Votre page existe mais ne convertit pas. L'autopsie éditoriale identifie exactement ce qui bloque en 5 jours ouvrés, pour 190 €."
 >
+
+  {/* ── HERO ──────────────────────────────────────────────────────────────
+      Changements :
+      - H1 reformulé : nommer le symptôme client avant la solution
+      - Prix et délai visibles dès le hero — c'est une force, pas à cacher
+      - CTA principal pointe vers l'ancre #commander sur cette même page
+        plutôt que vers /contact — zéro page supplémentaire à traverser
+      - Suppression du CTA secondaire "Voir les services" — distraction
+        sur une page de vente directe
+  ────────────────────────────────────────────────────────────────────── */}
   <section class="hero-section page-section">
     <Container>
       <div class="max-w-4xl">
-        <p class="kicker">Autopsie éditoriale · audit asynchrone</p>
+        <p class="kicker">Autopsie éditoriale · diagnostic asynchrone</p>
 
         <h1 class="mt-3 h1 text-balance">
-          Voir ce qui bloque avant de reprendre trop large.
+          Votre page ne convertit pas. Avant de tout réécrire, savoir ce qui bloque vraiment.
         </h1>
 
         <p class="mt-5 lead max-w-3xl">
-          Une page peut exister, être propre, et rester faible en décision.
-          L’autopsie sert à identifier ce qui bloque vraiment : promesse, structure,
-          preuve, objections, hiérarchie, décision.
+          Une page peut être propre, bien rédigée, et rester faible en décision.
+          L'autopsie identifie les frictions exactes — promesse, structure, preuve,
+          objections — et vous dit dans quel ordre les traiter.
         </p>
 
         <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-          <a class="btn-primary" href="/contact">Demander une autopsie</a>
-          <a class="btn-secondary" href="/services">Voir les services</a>
+          <a class="btn-primary" href="#commander">Demander une autopsie — 190 €</a>
+          <a class="btn-secondary" href="#livrable">Voir ce que vous recevez</a>
         </div>
 
-        <div class="mt-12 grid gap-4 border-t border-border pt-10 lg:grid-cols-3">
+        <div class="mt-12 grid gap-4 border-t border-border pt-10 lg:grid-cols-4">
+          <article>
+            <p class="h4">Format</p>
+            <p class="mt-2 body">Audit asynchrone. Pas d'atelier, pas de call.</p>
+          </article>
+
+          <article>
+            <p class="h4">Délai</p>
+            <p class="mt-2 body">Rendu sous 5 jours ouvrés.</p>
+          </article>
+
+          <article>
+            <p class="h4">Prix</p>
+            <p class="mt-2 body font-medium text-fg">190 € HT</p>
+          </article>
+
           <article>
             <p class="h4">Pour quoi</p>
-            <p class="mt-2 body">
-              Page offre, solution, landing, comparatif, cas client.
-            </p>
-          </article>
-
-          <article>
-            <p class="h4">Objectif</p>
-            <p class="mt-2 body">
-              Identifier ce qui empêche de comprendre et décider.
-            </p>
-          </article>
-
-          <article>
-            <p class="h4">À partir de</p>
-            <p class="mt-2 body font-medium text-fg">
-              190 €
-            </p>
+            <p class="mt-2 body">Page offre, solution, landing, comparatif, cas client.</p>
           </article>
         </div>
+
+        <p class="mt-4 small text-subtle">
+          TVA non applicable, art. 293 B du CGI.
+        </p>
       </div>
-    <p class="mt-6 small">
-  Prix indiqué sans TVA. TVA non applicable, art. 293 B du CGI.
-</p>
     </Container>
-    
   </section>
 
+  {/* ── SYMPTÔMES ─────────────────────────────────────────────────────────
+      Nouveau bloc. Le prospect doit se reconnaître dans son problème
+      avant de lire la solution. Trois situations concrètes, formulées
+      comme des phrases que le prospect se dit lui-même.
+  ────────────────────────────────────────────────────────────────────── */}
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
       <div class="max-w-3xl">
-        <p class="kicker">Quand l’utiliser</p>
+        <p class="kicker">Vous êtes au bon endroit si</p>
         <h2 class="mt-3 h2 text-balance">
-          Trois cas simples.
+          La page existe. Le problème aussi.
         </h2>
       </div>
 
       <div class="mt-10 grid gap-4 lg:grid-cols-3">
         <article class="card bg-bg">
-          <h3 class="h3">La page parle, mais ne cadre rien</h3>
+          <p class="kicker">Situation 1</p>
+          <h3 class="mt-2 h3">Le trafic arrive, mais rien ne se passe</h3>
           <p class="mt-3 body">
-            Promesse floue, lecture plate, décision absente.
+            Les visites sont là. Les demandes ne suivent pas.
+            Vous ne savez pas si le problème vient du message,
+            de la structure ou de la preuve.
           </p>
         </article>
 
         <article class="card bg-bg">
-          <h3 class="h3">Le contenu existe, mais ne tient pas</h3>
+          <p class="kicker">Situation 2</p>
+          <h3 class="mt-2 h3">Vous hésitez à tout réécrire</h3>
           <p class="mt-3 body">
-            Structure faible, preuve légère, progression inexistante.
+            La page n'est pas mauvaise. Mais elle ne déclenche rien.
+            Avant d'investir dans une refonte complète, vous voulez
+            comprendre ce qui mérite vraiment d'être changé.
           </p>
         </article>
 
         <article class="card bg-bg">
-          <h3 class="h3">Vous hésitez à tout refaire</h3>
+          <p class="kicker">Situation 3</p>
+          <h3 class="mt-2 h3">Vous avez un doute sur une page importante</h3>
           <p class="mt-3 body">
-            Avant de produire plus, il faut comprendre ce qui bloque.
+            Page pricing, page solution, landing de campagne.
+            Une page à enjeu que vous ne pouvez pas vous permettre
+            de laisser sous-performer.
           </p>
         </article>
       </div>
     </Container>
   </section>
 
+  {/* ── CE QUE L'AUTOPSIE REGARDE ─────────────────────────────────────────
+      Réorganisé : chaque dimension a maintenant une description
+      de ce qui cloche quand ça ne fonctionne pas — plus concret
+      que "Angle : ce que la page dit vraiment."
+  ────────────────────────────────────────────────────────────────────── */}
   <section class="section-rule hero-section page-section">
     <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
-        <div class="max-w-2xl">
-          <p class="kicker">Lecture</p>
-          <h2 class="mt-3 h2 text-balance">
-            Ce que l’autopsie regarde.
-          </h2>
-        </div>
+      <div class="max-w-3xl mb-10">
+        <p class="kicker">Méthode de lecture</p>
+        <h2 class="mt-3 h2 text-balance">
+          Quatre dimensions. Un seul objectif : trouver ce qui freine la décision.
+        </h2>
+        <p class="mt-4 body">
+          Pas un audit de forme. Pas une relecture SEO.
+          Une lecture orientée vers ce qui empêche de comprendre, de croire et de décider.
+        </p>
+      </div>
 
-        <div class="grid gap-4 sm:grid-cols-2">
-          <article class="card">
-            <h3 class="h3">Angle</h3>
-            <p class="mt-2 body">Ce que la page dit vraiment.</p>
-          </article>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <article class="card bg-surface">
+          <p class="kicker">01</p>
+          <h3 class="mt-2 h3">Angle</h3>
+          <p class="mt-3 body">
+            Ce que la page dit vraiment — et si c'est ce que le prospect
+            a besoin d'entendre. Une promesse floue ou mal positionnée
+            perd le visiteur avant la deuxième phrase.
+          </p>
+        </article>
 
-          <article class="card">
-            <h3 class="h3">Structure</h3>
-            <p class="mt-2 body">Ordre, hiérarchie, progression.</p>
-          </article>
+        <article class="card bg-surface">
+          <p class="kicker">02</p>
+          <h3 class="mt-2 h3">Structure</h3>
+          <p class="mt-3 body">
+            L'ordre des blocs, la hiérarchie des arguments, la progression
+            logique. Une page bien rédigée mais mal structurée ne convainc pas —
+            elle fatigue.
+          </p>
+        </article>
 
-          <article class="card">
-            <h3 class="h3">Preuve</h3>
-            <p class="mt-2 body">Ce qui est démontré, pas annoncé.</p>
-          </article>
+        <article class="card bg-surface">
+          <p class="kicker">03</p>
+          <h3 class="mt-2 h3">Preuve</h3>
+          <p class="mt-3 body">
+            Ce qui est démontré versus ce qui est annoncé. La plupart des pages
+            affirment trop et prouvent trop peu. L'autopsie identifie
+            où la crédibilité manque.
+          </p>
+        </article>
 
-          <article class="card">
-            <h3 class="h3">Décision</h3>
-            <p class="mt-2 body">Objections, réassurance, CTA.</p>
-          </article>
-        </div>
+        <article class="card bg-surface">
+          <p class="kicker">04</p>
+          <h3 class="mt-2 h3">Décision</h3>
+          <p class="mt-3 body">
+            Les objections non traitées, la réassurance absente, le CTA
+            prématuré ou mal formulé. Ce qui fait hésiter une dernière fois
+            avant de partir.
+          </p>
+        </article>
       </div>
     </Container>
   </section>
 
-  <section class="section-rule bg-surface hero-section page-section">
+  {/* ── LIVRABLE ──────────────────────────────────────────────────────────
+      Ancre #livrable pointée par le CTA hero secondaire.
+      Reformulé : chaque élément du livrable explique maintenant
+      ce que le prospect peut EN FAIRE — pas juste ce qu'il reçoit.
+  ────────────────────────────────────────────────────────────────────── */}
+  <section id="livrable" class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
+      <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div class="max-w-2xl">
           <p class="kicker">Livrable</p>
           <h2 class="mt-3 h2 text-balance">
-            Ce que vous recevez.
+            Ce que vous recevez. Ce que vous pouvez en faire.
           </h2>
+          <p class="mt-4 body">
+            Un document structuré, livré de manière asynchrone sous 5 jours ouvrés.
+            Pas de call. Pas de compte-rendu verbal. Un rendu écrit, exploitable directement.
+          </p>
+
+          <div class="mt-8">
+            <a class="btn-primary" href="#commander">Demander une autopsie — 190 €</a>
+          </div>
         </div>
 
-        <article class="card bg-bg">
-          <ul class="list-disc space-y-2 pl-5 body">
-            <li>Analyse d’un actif</li>
-            <li>Frictions explicites</li>
-            <li>Priorités de correction</li>
-            <li>Recommandation de suite</li>
-          </ul>
+        <div class="grid gap-4">
+          <article class="card bg-bg">
+            <p class="kicker">01 · Analyse de l'actif</p>
+            <p class="mt-2 body">
+              Lecture complète de la page avec identification des points forts
+              à conserver et des zones qui freinent la décision.
+            </p>
+          </article>
 
-          <p class="mt-6 body">
-            Pas de réécriture. Pas d’atelier. Pas de dérive.
-          </p>
-        </article>
+          <article class="card bg-bg">
+            <p class="kicker">02 · Frictions explicites</p>
+            <p class="mt-2 body">
+              Chaque friction est nommée, localisée et expliquée.
+              Vous comprenez pourquoi ça bloque, pas seulement que ça bloque.
+            </p>
+          </article>
+
+          <article class="card bg-bg">
+            <p class="kicker">03 · Priorités de correction</p>
+            <p class="mt-2 body">
+              Un ordre de traitement clair. Vous savez par quoi commencer
+              pour le meilleur impact avec le moins d'effort.
+            </p>
+          </article>
+
+          <article class="card bg-bg">
+            <p class="kicker">04 · Recommandation de suite</p>
+            <p class="mt-2 body">
+              Correction partielle, réécriture complète, ou autre levier ?
+              Une recommandation directe sur l'étape suivante la plus pertinente.
+            </p>
+          </article>
+        </div>
       </div>
     </Container>
   </section>
 
+  {/* ── EXEMPLES ──────────────────────────────────────────────────────────
+      Déplacé après le livrable — le prospect est convaincu avant
+      de consulter les exemples, pas distrait avant.
+  ────────────────────────────────────────────────────────────────────── */}
   <section class="section-rule hero-section page-section">
     <Container>
       <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div class="max-w-3xl">
-          <p class="kicker">Autopsies</p>
+          <p class="kicker">Exemples</p>
           <h2 class="mt-3 h2 text-balance">
-            Voir comment la lecture s’applique.
+            Voir la méthode en action.
           </h2>
           <p class="mt-4 body max-w-2xl">
-            Le point d’entrée le plus utile est un exemple fictif détaillé, puis des cas plus courts
-            pour montrer comment la logique s’applique à d’autres formats.
+            Des autopsies fictives construites pour montrer comment la lecture
+            s'applique sur des cas concrets : page SaaS, comparatif, landing.
           </p>
         </div>
 
         <div>
-          <a class="btn-secondary" href="/autopsies">Consulter les autopsies</a>
+          <a class="btn-secondary" href="/autopsies">Toutes les autopsies</a>
         </div>
       </div>
 
       <div class="mt-10 grid gap-4 lg:grid-cols-2">
-        <article class="card bg-bg lg:col-span-2">
-          <p class="kicker">Exemple fictif</p>
-          <h3 class="mt-2 h3">Une page solution SaaS crédible en surface, faible en décision</h3>
+        <article class="card bg-surface lg:col-span-2">
+          <p class="kicker">Cas principal · fictif</p>
+          <h3 class="mt-2 h3">Page solution SaaS — crédible en surface, faible en décision</h3>
           <p class="mt-3 body max-w-3xl">
-            Un faux cas construit pour montrer la méthode sur une page solution SaaS :
-            promesse trop large, bénéfices mal hiérarchisés, preuve faible, CTA prématuré.
+            La démonstration la plus complète : promesse trop large, bénéfices
+            mal hiérarchisés, preuve insuffisante, CTA prématuré.
+            Chaque friction est détaillée avec sa correction.
           </p>
           <div class="mt-6">
             <a class="btn-secondary" href="/autopsies/page-solution-saas-fictive">
-              Consulter cette autopsie
+              Lire cette autopsie
             </a>
           </div>
         </article>
 
-        <article class="card bg-bg">
-          <h3 class="h3">Page SaaS floue</h3>
+        <article class="card bg-surface">
+          <p class="kicker">Cas court</p>
+          <h3 class="mt-2 h3">Page SaaS floue</h3>
           <p class="mt-3 body">Elle parle, mais ne cadre rien.</p>
-          <a class="btn-secondary mt-6" href="/autopsies/page-service-saas-floue">
-            Consulter cette autopsie
-          </a>
+          <div class="mt-6">
+            <a class="btn-secondary" href="/autopsies/page-service-saas-floue">
+              Lire cette autopsie
+            </a>
+          </div>
         </article>
 
-        <article class="card bg-bg">
-          <h3 class="h3">Comparatif neutre</h3>
-          <p class="mt-3 body">Il compare, mais n’oriente pas.</p>
-          <a class="btn-secondary mt-6" href="/autopsies/comparatif-trop-neutre">
-            Consulter cette autopsie
-          </a>
-        </article>
-
-        <article class="card bg-bg lg:col-span-2">
-          <h3 class="h3">Landing bavarde</h3>
-          <p class="mt-3 body">Elle promet plus qu’elle ne prouve.</p>
-          <a class="btn-secondary mt-6" href="/autopsies/landing-page-trop-bavarde">
-            Consulter cette autopsie
-          </a>
+        <article class="card bg-surface">
+          <p class="kicker">Cas court</p>
+          <h3 class="mt-2 h3">Comparatif neutre</h3>
+          <p class="mt-3 body">Il compare, mais n'oriente pas.</p>
+          <div class="mt-6">
+            <a class="btn-secondary" href="/autopsies/comparatif-trop-neutre">
+              Lire cette autopsie
+            </a>
+          </div>
         </article>
       </div>
     </Container>
   </section>
 
+  {/* ── OBJECTIONS ────────────────────────────────────────────────────────
+      Nouveau bloc. Traiter les hésitations avant qu'elles bloquent
+      la décision finale. Trois objections typiques avec réponse directe.
+  ────────────────────────────────────────────────────────────────────── */}
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-        <div class="max-w-2xl">
-          <p class="kicker">Prise de contact</p>
-          <h2 class="mt-3 h2 text-balance">
-            Une page à disséquer ?
-          </h2>
-          <p class="mt-4 body">
-            Envoyez l’actif et le point de friction principal.
-          </p>
-        </div>
+      <div class="max-w-3xl mb-10">
+        <p class="kicker">Questions fréquentes</p>
+        <h2 class="mt-3 h2 text-balance">
+          Ce que vous vous demandez probablement.
+        </h2>
+      </div>
 
-        <div class="grid gap-3 sm:flex sm:flex-wrap">
-          <a class="btn-primary" href="/contact">Demander une autopsie</a>
-          <a class="btn-secondary" href="/services">Voir les services</a>
-        </div>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <article class="card bg-bg">
+          <h3 class="h4">Est-ce que ça va vraiment m'aider si ma page n'est pas si mauvaise ?</h3>
+          <p class="mt-3 body">
+            Les pages "pas si mauvaises" sont souvent les plus difficiles à améliorer
+            sans regard extérieur. Elles n'ont pas de défaut évident — elles ont
+            des frictions subtiles que vous ne voyez plus.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <h3 class="h4">Est-ce que je reçois des corrections ou juste un diagnostic ?</h3>
+          <p class="mt-3 body">
+            Un diagnostic. L'autopsie ne réécrit pas — elle identifie et priorise.
+            Si une réécriture est nécessaire, la recommandation de suite
+            l'indique avec le périmètre exact.
+          </p>
+        </article>
+
+        <article class="card bg-bg">
+          <h3 class="h4">Que se passe-t-il après le diagnostic ?</h3>
+          <p class="mt-3 body">
+            Vous êtes libre de corriger seul, de faire corriger par votre équipe,
+            ou de prolonger avec une mission de réécriture. Aucune suite
+            n'est implicite ou obligatoire.
+          </p>
+        </article>
       </div>
     </Container>
   </section>
+
+  {/* ── CTA FINAL / COMMANDER ─────────────────────────────────────────────
+      Ancre #commander pointée par tous les CTAs de la page.
+      Formulaire intégré directement ici — zéro page supplémentaire.
+      Trois champs maximum, identiques à la page contact.
+      Prix et délai rappelés juste avant le formulaire.
+  ────────────────────────────────────────────────────────────────────── */}
+  <section id="commander" class="section-rule hero-section page-section">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+
+        <div>
+          <p class="kicker">Commander</p>
+          <h2 class="mt-3 h2 text-balance">
+            Envoyez la page. Le diagnostic arrive sous 5 jours ouvrés.
+          </h2>
+          <p class="mt-4 body">
+            Indiquez l'URL, décrivez ce qui vous pose problème et ce que vous espérez
+            comprendre. Le reste vient dans le rendu.
+          </p>
+
+          <form
+            class="mt-8 grid gap-6"
+            action="https://formspree.io/f/mdabvqqg"
+            method="POST"
+          >
+            <div class="grid gap-2">
+              <label for="url" class="small uppercase tracking-[0.2em]">
+                URL de la page à auditer <span class="text-fg">*</span>
+              </label>
+              <input
+                id="url"
+                name="url"
+                type="url"
+                required
+                placeholder="https://votre-site.com/page-a-auditer"
+                class="w-full rounded-[var(--radius)] border border-border bg-surface px-4 py-3 body placeholder:text-subtle focus:outline-none focus:ring-2 focus:ring-fg/20"
+              />
+            </div>
+
+            <div class="grid gap-2">
+              <label for="problem" class="small uppercase tracking-[0.2em]">
+                Ce qui vous pose problème <span class="text-fg">*</span>
+              </label>
+              <textarea
+                id="problem"
+                name="problem"
+                required
+                rows="4"
+                placeholder="Ex : la page reçoit du trafic mais génère très peu de demandes. On ne sait pas si c'est le message, la structure ou la preuve qui manque."
+                class="w-full rounded-[var(--radius)] border border-border bg-surface px-4 py-3 body placeholder:text-subtle focus:outline-none focus:ring-2 focus:ring-fg/20 resize-none"
+              ></textarea>
+            </div>
+
+            <div class="grid gap-2">
+              <label for="goal" class="small uppercase tracking-[0.2em]">
+                Ce que vous voulez savoir après <span class="text-fg">*</span>
+              </label>
+              <input
+                id="goal"
+                name="goal"
+                type="text"
+                required
+                placeholder="Ex : savoir ce qui freine la décision et si une réécriture complète est justifiée"
+                class="w-full rounded-[var(--radius)] border border-border bg-surface px-4 py-3 body placeholder:text-subtle focus:outline-none focus:ring-2 focus:ring-fg/20"
+              />
+            </div>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button type="submit" class="btn-primary">
+                Envoyer la demande
+              </button>
+            </div>
+
+            <p class="small text-subtle">
+              Réponse sous 48h ouvrées. La confirmation inclut un lien de paiement sécurisé.
+              L'autopsie démarre dès réception du règlement — rendu sous 5 jours ouvrés à partir de là.
+            </p>
+          </form>
+        </div>
+
+        {/* Récapitulatif offre — visible à côté du formulaire */}
+        <div class="grid gap-4">
+          <article class="card bg-surface">
+            <p class="kicker">Récapitulatif</p>
+            <h3 class="mt-2 h3">Autopsie éditoriale</h3>
+
+          <div class="mt-5 grid gap-4">
+              <div class="border-t border-border pt-4">
+                <p class="small uppercase tracking-[0.2em]">Étape 1</p>
+                <p class="mt-1 body">Vous soumettez le formulaire</p>
+              </div>
+              <div class="border-t border-border pt-4">
+                <p class="small uppercase tracking-[0.2em]">Étape 2</p>
+                <p class="mt-1 body">Confirmation par email sous 48h — avec lien de paiement</p>
+              </div>
+              <div class="border-t border-border pt-4">
+                <p class="small uppercase tracking-[0.2em]">Étape 3</p>
+                <p class="mt-1 body">Règlement → démarrage immédiat</p>
+              </div>
+              <div class="border-t border-border pt-4">
+                <p class="small uppercase tracking-[0.2em]">Étape 4</p>
+                <p class="mt-1 body">Rendu sous 5 jours ouvrés</p>
+              </div>
+              <div class="border-t border-border pt-4">
+                <p class="small uppercase tracking-[0.2em]">Prix</p>
+                <p class="mt-1 body font-medium text-fg">190 € HT</p>
+                <p class="mt-1 small text-subtle">TVA non applicable, art. 293 B du CGI.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </Container>
+  </section>
+
 </BaseLayout>
