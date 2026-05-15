@@ -4,7 +4,7 @@ import Container from "../components/Container.astro";
 ---
 
 <BaseLayout
-  title="Autopsies éditoriales — Lectures critiques d’actifs business"
+  title="Autopsies éditoriales — Lectures critiques d'actifs business"
   description="Des autopsies éditoriales pour montrer comment Studio Editorial démonte une page, un comparatif ou une landing page avant toute réécriture."
 >
   <section class="hero-section page-section">
@@ -13,39 +13,91 @@ import Container from "../components/Container.astro";
         <p class="kicker">Autopsies éditoriales</p>
 
         <h1 class="mt-3 h1 text-balance">
-          Des lectures critiques d’actifs business. Pas des commentaires vagues sur “le ton”.
+          Des lectures critiques d'actifs business. Pas des commentaires vagues sur "le ton".
         </h1>
 
         <p class="mt-5 lead max-w-4xl">
           Une autopsie sert à voir ce qui bloque : promesse, structure, preuve, objections,
-          hiérarchie, décision. Ces exemples montrent comment un actif peut paraître “présent”
+          hiérarchie, décision. Ces exemples montrent comment un actif peut paraître "présent"
           tout en restant peu utile.
         </p>
 
         <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-          <a class="btn-primary" href="/autopsie-editoriale">Voir l’offre d’autopsie</a>
+          <a class="btn-primary" href="/autopsie-editoriale">Voir l'offre d'autopsie</a>
           <a class="btn-secondary" href="/services">Voir les services</a>
         </div>
       </div>
     </Container>
   </section>
 
+  {/* ── CAS RÉEL ─────────────────────────────────────────────────────────────
+      Pennylane en tête, mis en avant comme seule preuve marché.
+      Format large pour le distinguer visuellement des fictives.
+  ────────────────────────────────────────────────────────────────────────── */}
   <section class="section-rule bg-surface hero-section page-section">
     <Container>
-      <div class="max-w-3xl">
-        <p class="kicker">Lecture</p>
+      <div class="max-w-3xl mb-10">
+        <p class="kicker">Cas réel</p>
         <h2 class="mt-3 h2 text-balance">
-          Quatre autopsies pour montrer ce que le studio regarde vraiment.
+          Une page réelle, un regard sans filtre.
         </h2>
+        <p class="mt-4 body">
+          Cette autopsie porte sur une page publique d'un SaaS français connu.
+          Elle montre ce que la méthode fait remonter sur un actif sérieux —
+          pas sur un cas inventé pour l'occasion.
+        </p>
       </div>
 
-      <div class="mt-10 grid gap-5">
-        <article class="card bg-bg">
-          <p class="kicker">Exemple 00 · Fictif</p>
+      <article class="card bg-bg">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
+          <div>
+            <p class="kicker">Pennylane · Page tarifs · Cas réel · Public</p>
+            <h3 class="mt-2 h3">
+              La page tarifs de Pennylane : solide en surface, quatre frictions en décision
+            </h3>
+            <p class="mt-3 body max-w-3xl">
+              Pennylane a une page pricing bien construite. Elle a aussi quatre angles morts
+              qui ralentissent la décision d'un visiteur pourtant déjà convaincu par le produit :
+              une accroche qui ne cadre pas le choix, des fonctionnalités non traduites en situations,
+              un plan qui parle à deux audiences sans le dire, une FAQ qui traite les mauvaises objections.
+            </p>
+          </div>
+          <div class="shrink-0">
+            <a class="btn-primary" href="/autopsies/autopsie-pennylane">
+              Lire cette autopsie
+            </a>
+          </div>
+        </div>
+      </article>
+    </Container>
+  </section>
+
+  {/* ── CAS FICTIFS ──────────────────────────────────────────────────────────
+      Regroupés sous un sous-titre qui les assume comme exercices de méthode.
+      Gardés car ils couvrent des typologies différentes (solution, comparatif,
+      landing) qui complètent le cas Pennylane (pricing).
+  ────────────────────────────────────────────────────────────────────────── */}
+  <section class="section-rule hero-section page-section">
+    <Container>
+      <div class="max-w-3xl mb-10">
+        <p class="kicker">Exercices de méthode</p>
+        <h2 class="mt-3 h2 text-balance">
+          Quatre cas fictifs pour montrer ce que le studio regarde sur d'autres typologies.
+        </h2>
+        <p class="mt-4 body">
+          Ces autopsies sont construites sur des pages inventées. Leur rôle n'est pas
+          de simuler un portfolio — c'est de montrer comment la méthode s'applique
+          sur une page solution, un comparatif ou une landing page.
+        </p>
+      </div>
+
+      <div class="grid gap-5">
+        <article class="card bg-surface">
+          <p class="kicker">Exemple 00 · Fictif · Page solution SaaS</p>
           <h3 class="mt-2 h3">Une page solution SaaS crédible en surface, faible en décision</h3>
           <p class="mt-3 body max-w-3xl">
-            Un faux cas construit pour montrer la méthode sur une page solution SaaS :
-            promesse trop large, bénéfices mal hiérarchisés, preuve faible, CTA prématuré.
+            Promesse trop large, bénéfices mal hiérarchisés, preuve faible, CTA prématuré.
+            Le cas le plus complet pour voir la méthode en action de bout en bout.
           </p>
           <div class="mt-6">
             <a class="btn-secondary" href="/autopsies/page-solution-saas-fictive">
@@ -54,12 +106,12 @@ import Container from "../components/Container.astro";
           </div>
         </article>
 
-        <article class="card bg-bg">
-          <p class="kicker">Exemple 01</p>
+        <article class="card bg-surface">
+          <p class="kicker">Exemple 01 · Fictif · Page service SaaS</p>
           <h3 class="mt-2 h3">Une page service SaaS qui parle beaucoup mais ne cadre rien</h3>
           <p class="mt-3 body max-w-3xl">
             La page empile bénéfices, fonctionnalités et promesses, mais le lecteur ne comprend
-            pas clairement à qui elle s’adresse, pourquoi cette offre existe, ni sur quoi repose sa crédibilité.
+            pas clairement à qui elle s'adresse, pourquoi cette offre existe, ni sur quoi repose sa crédibilité.
           </p>
           <div class="mt-6">
             <a class="btn-secondary" href="/autopsies/page-service-saas-floue">
@@ -68,9 +120,9 @@ import Container from "../components/Container.astro";
           </div>
         </article>
 
-        <article class="card bg-bg">
-          <p class="kicker">Exemple 02</p>
-          <h3 class="mt-2 h3">Un comparatif qui compare, mais n’aide pas à choisir</h3>
+        <article class="card bg-surface">
+          <p class="kicker">Exemple 02 · Fictif · Comparatif</p>
+          <h3 class="mt-2 h3">Un comparatif qui compare, mais n'aide pas à choisir</h3>
           <p class="mt-3 body max-w-3xl">
             Les critères existent, les blocs sont en place, mais rien ne construit une décision.
             Le lecteur avance dans une comparaison descriptive, pas dans une orientation réelle.
@@ -82,12 +134,12 @@ import Container from "../components/Container.astro";
           </div>
         </article>
 
-        <article class="card bg-bg">
-          <p class="kicker">Exemple 03</p>
+        <article class="card bg-surface">
+          <p class="kicker">Exemple 03 · Fictif · Landing page</p>
           <h3 class="mt-2 h3">Une landing page trop bavarde pour être crédible</h3>
           <p class="mt-3 body max-w-3xl">
-            Le texte est long, l’intention est visible, mais la preuve ne suit pas. La page demande
-            trop d’attention pour trop peu de tenue.
+            Le texte est long, l'intention est visible, mais la preuve ne suit pas.
+            La page demande trop d'attention pour trop peu de tenue.
           </p>
           <div class="mt-6">
             <a class="btn-secondary" href="/autopsies/landing-page-trop-bavarde">
@@ -99,7 +151,7 @@ import Container from "../components/Container.astro";
     </Container>
   </section>
 
-  <section class="section-rule hero-section page-section">
+  <section class="section-rule bg-surface hero-section page-section">
     <Container>
       <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
         <div class="max-w-2xl">
@@ -115,7 +167,7 @@ import Container from "../components/Container.astro";
 
         <div class="grid gap-3 sm:flex sm:flex-wrap">
           <a class="btn-primary" href="/autopsie-editoriale">Demander une autopsie</a>
-          <a class="btn-secondary" href="/contact">Parler d’un projet</a>
+          <a class="btn-secondary" href="/contact">Parler d'un projet</a>
         </div>
       </div>
     </Container>
